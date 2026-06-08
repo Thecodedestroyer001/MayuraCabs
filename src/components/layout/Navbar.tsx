@@ -112,10 +112,9 @@ export default function Navbar() {
         className={`fixed inset-0 bg-brand-black transition-all duration-500 lg:hidden ${
           menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
-        style={{ zIndex: 50000 }}
+        style={{ zIndex: 49000 }}
       >
-        <div className="flex flex-col items-center justify-center h-full gap-8 px-8">
-          <Image src="/logo-custom.png" alt="Mayura Car Rentals" width={320} height={96} style={{ height: '96px', width: 'auto' }} className="object-contain mb-6" />
+        <div className="flex flex-col items-center justify-center h-full gap-8 px-8 pt-20">
           {navLinks.map((link, i) => (
             <Link
               key={link.href}

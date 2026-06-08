@@ -82,7 +82,8 @@ export default function Hero() {
           <div className="order-2 lg:order-1">
             <h1
               ref={headlineRef}
-              className="text-4xl sm:text-5xl lg:text-6xl lg:text-7xl font-black leading-[1.05] text-white mb-6"
+              className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-black leading-[1.05] text-white mb-6"
+              style={{ textWrap: 'balance' }}
             >
               Corporate Employee
               <br />
@@ -146,7 +147,7 @@ export default function Hero() {
             <div className="relative">
 
               {/* Floating car slider */}
-              <div className="hero-float translate-y-0 md:-translate-y-8 lg:-translate-y-12 scale-110 md:scale-125 lg:scale-125 xl:scale-150 relative h-[400px] sm:h-[500px] md:h-[600px] w-full min-w-[320px] md:min-w-[500px] flex items-center justify-center overflow-visible">
+              <div className="hero-float translate-y-0 md:-translate-y-8 lg:-translate-y-12 scale-110 md:scale-125 lg:scale-125 xl:scale-150 relative h-[400px] sm:h-[500px] md:h-[600px] w-full min-w-[280px] sm:min-w-[320px] md:min-w-[500px] flex items-center justify-center overflow-visible">
                 <motion.img
                   key={currentImageIndex}
                   src={fleetImages[currentImageIndex]}

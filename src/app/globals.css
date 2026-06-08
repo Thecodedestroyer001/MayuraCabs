@@ -60,6 +60,9 @@ body {
   font-family: 'Figtree', sans-serif;
   color: var(--black);
   background: var(--white);
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 /* ========================

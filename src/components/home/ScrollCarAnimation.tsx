@@ -42,7 +42,7 @@ export default function ScrollCarAnimation() {
             style={{ opacity: f1Opacity, y: f1Y }}
             className="absolute top-12 md:top-20 lg:top-24 max-w-2xl text-center px-4"
           >
-            <h3 className="text-4xl md:text-6xl font-extrabold text-brand-yellow mb-6">AI-Powered Routing</h3>
+            <h3 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-brand-yellow mb-6">AI-Powered Routing</h3>
             <p className="text-xl md:text-2xl text-white/70">Dynamic dispatch guarantees zero wait times and optimal efficiency for every shift.</p>
           </motion.div>
 
@@ -50,7 +50,7 @@ export default function ScrollCarAnimation() {
             style={{ opacity: f2Opacity, y: f2Y }}
             className="absolute top-12 md:top-20 lg:top-24 max-w-2xl text-center px-4"
           >
-            <h3 className="text-4xl md:text-6xl font-extrabold text-brand-yellow mb-6">24/7 Command Centre</h3>
+            <h3 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-brand-yellow mb-6">24/7 Command Centre</h3>
             <p className="text-xl md:text-2xl text-white/70">Real-time GPS tracking and dedicated support teams ensure complete safety and visibility.</p>
           </motion.div>
 
@@ -58,7 +58,7 @@ export default function ScrollCarAnimation() {
             style={{ opacity: f3Opacity, y: f3Y }}
             className="absolute top-12 md:top-20 lg:top-24 max-w-2xl text-center px-4"
           >
-            <h3 className="text-4xl md:text-6xl font-extrabold text-brand-yellow mb-6">EV-Ready Fleet</h3>
+            <h3 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-brand-yellow mb-6">EV-Ready Fleet</h3>
             <p className="text-xl md:text-2xl text-white/70">Slash your corporate carbon footprint with our premium fleet of electric vehicles.</p>
           </motion.div>
 
@@ -67,7 +67,7 @@ export default function ScrollCarAnimation() {
         {/* The Animated Car Container */}
         <motion.div 
           style={{ x: carX }}
-          className="absolute z-30 mt-32 w-[600px] md:w-[900px] lg:w-[1100px] max-w-none flex items-center justify-center"
+          className="absolute z-30 mt-32 w-[300px] sm:w-[450px] md:w-[900px] lg:w-[1100px] max-w-none flex items-center justify-center"
         >
           <div className="relative w-full">
             {/* Speed lines effect behind car to make it look like it's driving */}
