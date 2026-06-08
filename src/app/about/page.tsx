@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import FooterCTA from '@/components/shared/FooterCTA'
 import TimeTunnel from '@/components/about/TimeTunnel'
 
@@ -8,13 +9,15 @@ export const metadata: Metadata = {
   description: 'Built in Bengaluru. Built for Bengaluru\'s enterprises. Learn about Mayura Car Rentals\' story, mission, and values.',
 }
 
+import { Zap, ShieldCheck, Search, Leaf, Handshake, Target } from 'lucide-react'
+
 const values = [
-  { icon: '⚡', title: 'Technology First', desc: 'Our Commute platform is the backbone of everything we do. Every decision is data-driven.' },
-  { icon: '🛡️', title: 'Safety Always', desc: 'Background-verified drivers, panic buttons, live tracking, and AIS-140 compliance — non-negotiable.' },
-  { icon: '🔎', title: 'Total Transparency', desc: 'No hidden costs. Itemised billing, open dashboards, honest SLA reporting.' },
-  { icon: '🌿', title: 'Sustainability', desc: 'Actively growing our EV fleet. ESG reporting for every enterprise client.' },
-  { icon: '🤝', title: 'Partnership', desc: 'We act as an extension of your HR and Admin team, not just a vendor.' },
-  { icon: '🎯', title: 'Customisation', desc: 'No two enterprises are alike. Every programme is built to your specific requirements.' },
+  { icon: Zap, title: 'Technology First', desc: 'Our Commute platform is the backbone of everything we do. Every decision is data-driven.' },
+  { icon: ShieldCheck, title: 'Safety Always', desc: 'Background-verified drivers, panic buttons, live tracking, and AIS-140 compliance - non-negotiable.' },
+  { icon: Search, title: 'Total Transparency', desc: 'No hidden costs. Itemised billing, open dashboards, honest SLA reporting.' },
+  { icon: Leaf, title: 'Sustainability', desc: 'Actively growing our EV fleet. ESG reporting for every enterprise client.' },
+  { icon: Handshake, title: 'Partnership', desc: 'We act as an extension of your HR and Admin team, not just a vendor.' },
+  { icon: Target, title: 'Customisation', desc: 'No two enterprises are alike. Every programme is built to your specific requirements.' },
 ]
 
 const comparisons = [
@@ -29,7 +32,7 @@ const comparisons = [
 const storyTimeline = [
   { year: '2021', text: 'Mayura Car Rentals was founded in Bengaluru with a simple, powerful belief: enterprise employees deserve transport that actually works. Not transport managed through WhatsApp forwards and late-night driver calls.' },
   { year: '2022', text: 'Our founders spent years working in India\'s largest tech and BFSI enterprises, witnessing HR managers spending hours managing transport chaos instead of their actual job. They saw finance teams struggling to reconcile bills.' },
-  { year: '2024', text: 'So they built Mayura — a company that combines a professional, safety-first fleet with proprietary technology to give enterprises total visibility and accountability over their employee transport operations.' },
+  { year: '2024', text: 'So they built Mayura - a company that combines a professional, safety-first fleet with proprietary technology to give enterprises total visibility and accountability over their employee transport operations.' },
   { year: 'Today', text: 'Mayura serves enterprises across IT/ITES, GCCs, BPO, BFSI, and consulting sectors in Bengaluru, managing thousands of trips per month with a 99.2% on-time delivery rate.' },
 ]
 
@@ -61,22 +64,32 @@ export default function AboutPage() {
       <section className="section bg-brand-gray-100">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-brand-black rounded-3xl p-10">
-              <div className="w-12 h-1 bg-brand-yellow rounded mb-6" />
-              <h2 className="text-3xl font-black text-white mb-4">Our Mission</h2>
-              <p className="text-white/70 text-lg leading-relaxed">
-                To make enterprise employee transport in Bengaluru safe, reliable, and effortless — by
-                combining best-in-class fleet operations with technology that puts HR and Admin teams
-                back in control.
-              </p>
+            <div className="bg-brand-black rounded-3xl overflow-hidden flex flex-col">
+              <div className="h-64 w-full relative">
+                <Image src="/images/command_center.png" alt="Mayura Command Center" fill className="object-cover" />
+              </div>
+              <div className="p-10 flex-1">
+                <div className="w-12 h-1 bg-brand-yellow rounded mb-6" />
+                <h2 className="text-3xl font-black text-white mb-4">Our Mission</h2>
+                <p className="text-white/70 text-lg leading-relaxed">
+                  To make enterprise employee transport in Bengaluru safe, reliable, and effortless - by
+                  combining best-in-class fleet operations with technology that puts HR and Admin teams
+                  back in control.
+                </p>
+              </div>
             </div>
-            <div className="bg-brand-yellow rounded-3xl p-10">
-              <div className="w-12 h-1 bg-brand-black rounded mb-6" />
-              <h2 className="text-3xl font-black text-brand-black mb-4">Our Vision</h2>
-              <p className="text-brand-black/70 text-lg leading-relaxed">
-                To be the most trusted corporate mobility partner for every enterprise operating in
-                India&apos;s top technology and business hubs — with zero-emission fleets by 2030.
-              </p>
+            <div className="bg-brand-yellow rounded-3xl overflow-hidden flex flex-col">
+              <div className="h-64 w-full relative">
+                <Image src="/images/premium_ev_fleet.png" alt="Mayura Premium EV Fleet" fill className="object-cover" />
+              </div>
+              <div className="p-10 flex-1">
+                <div className="w-12 h-1 bg-brand-black rounded mb-6" />
+                <h2 className="text-3xl font-black text-brand-black mb-4">Our Vision</h2>
+                <p className="text-brand-black/70 text-lg leading-relaxed">
+                  To be the most trusted corporate mobility partner for every enterprise operating in
+                  India&apos;s top technology and business hubs - with zero-emission fleets by 2030.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -92,7 +105,9 @@ export default function AboutPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {values.map((v) => (
               <div key={v.title} className="card-hover bg-brand-gray-100 rounded-2xl p-7">
-                <div className="text-3xl mb-4">{v.icon}</div>
+                <div className="mb-4 text-brand-black">
+                  <v.icon className="w-8 h-8" />
+                </div>
                 <h3 className="font-black text-brand-black text-lg mb-2">{v.title}</h3>
                 <p className="text-brand-gray-500 text-sm leading-relaxed">{v.desc}</p>
               </div>

@@ -1,19 +1,21 @@
+import { Car, CarFront, Bus, BusFront, Zap, MapPin, Calendar, LineChart, CreditCard, Smartphone, AlertTriangle } from 'lucide-react'
+
 const fleetTypes = [
-  { icon: '🚗', name: 'Hatchbacks', desc: 'Alto, Swift, i20 — 4-seater comfort' },
-  { icon: '🚙', name: 'Sedans', desc: 'Dzire, Amaze — Executive daily commute' },
-  { icon: '🚕', name: 'SUVs', desc: 'Ertiga, Innova — 6–7 seater pool rides' },
-  { icon: '🚐', name: 'Mini Vans', desc: 'Tempo Traveller — 9–12 seater shuttles' },
-  { icon: '🚌', name: 'Buses', desc: '20–54 seater for large workforce' },
-  { icon: '⚡', name: 'EV Fleet', desc: 'Tata Nexon EV, Tigor EV — zero emission' },
+  { icon: Car, name: 'Hatchbacks', desc: 'Alto, Swift, i20 - 4-seater comfort' },
+  { icon: CarFront, name: 'Sedans', desc: 'Dzire, Amaze - Executive daily commute' },
+  { icon: Car, name: 'SUVs', desc: 'Ertiga, Innova - 6–7 seater pool rides' },
+  { icon: BusFront, name: 'Mini Vans', desc: 'Tempo Traveller - 9–12 seater shuttles' },
+  { icon: Bus, name: 'Buses', desc: '20–54 seater for large workforce' },
+  { icon: Zap, name: 'EV Fleet', desc: 'Tata Nexon EV, Tigor EV - zero emission' },
 ]
 
 const platformFeatures = [
-  { icon: '📍', title: 'Live Fleet Tracking', desc: 'Real-time GPS on every vehicle, always' },
-  { icon: '🗓️', title: 'Smart Scheduling', desc: 'Automated roster + route generation' },
-  { icon: '📊', title: 'Executive Dashboard', desc: 'Cost, utilisation & SLA reports' },
-  { icon: '💳', title: 'Consolidated Billing', desc: 'One invoice, itemised per trip' },
-  { icon: '📲', title: 'Employee App', desc: 'Live pickup ETA on employee\'s phone' },
-  { icon: '⚠️', title: 'SOS & Safety Alerts', desc: 'One-tap emergency with auto-notification' },
+  { icon: MapPin, title: 'Live Fleet Tracking', desc: 'Real-time GPS on every vehicle, always' },
+  { icon: Calendar, title: 'Smart Scheduling', desc: 'Automated roster + route generation' },
+  { icon: LineChart, title: 'Executive Dashboard', desc: 'Cost, utilisation & SLA reports' },
+  { icon: CreditCard, title: 'Consolidated Billing', desc: 'One invoice, itemised per trip' },
+  { icon: Smartphone, title: 'Employee App', desc: 'Live pickup ETA on employee\'s phone' },
+  { icon: AlertTriangle, title: 'SOS & Safety Alerts', desc: 'One-tap emergency with auto-notification' },
 ]
 
 export default function SolutionSection() {
@@ -38,7 +40,8 @@ export default function SolutionSection() {
 
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Fleet column */}
-          <div className="reveal-left bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+          <div className="reveal-left bg-gradient-to-br from-brand-yellow/10 to-transparent rounded-3xl p-8 shadow-lg border-2 border-brand-yellow/30 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-yellow/20 blur-[50px] rounded-full pointer-events-none" />
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-10 rounded-xl bg-brand-yellow/10 flex items-center justify-center text-xl">🚗</div>
               <div>
@@ -52,8 +55,8 @@ export default function SolutionSection() {
                   key={item.name}
                   className="flex items-center gap-4 p-4 rounded-xl hover:bg-brand-gray-100 transition-colors group"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-brand-gray-100 flex items-center justify-center text-xl group-hover:bg-brand-yellow/10 transition-colors flex-shrink-0">
-                    {item.icon}
+                  <div className="w-10 h-10 rounded-lg bg-brand-gray-100 flex items-center justify-center group-hover:bg-brand-yellow/10 transition-colors flex-shrink-0 text-brand-black">
+                    <item.icon className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="font-bold text-brand-black text-sm">{item.name}</div>
@@ -82,7 +85,9 @@ export default function SolutionSection() {
                   key={feat.title}
                   className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-brand-yellow/40 hover:bg-brand-yellow/5 transition-all group"
                 >
-                  <div className="text-2xl mb-3">{feat.icon}</div>
+                  <div className="mb-4 text-brand-yellow">
+                    <feat.icon className="w-6 h-6" />
+                  </div>
                   <div className="font-bold text-white text-sm mb-1">{feat.title}</div>
                   <div className="text-white/50 text-xs leading-relaxed">{feat.desc}</div>
                 </div>
@@ -92,7 +97,7 @@ export default function SolutionSection() {
             {/* CTA inside */}
             <div className="mt-8 p-4 rounded-xl bg-brand-yellow/10 border border-brand-yellow/20">
               <p className="text-brand-yellow text-sm font-semibold mb-1">Free Platform Demo Available</p>
-              <p className="text-white/60 text-xs">See the Commute dashboard live — takes 20 minutes.</p>
+              <p className="text-white/60 text-xs">See the Commute dashboard live - takes 20 minutes.</p>
             </div>
           </div>
         </div>

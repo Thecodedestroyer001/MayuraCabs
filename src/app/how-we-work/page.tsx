@@ -5,7 +5,7 @@ import DynamicRouteTimeline from '@/components/how-we-work/DynamicRouteTimeline'
 
 export const metadata: Metadata = {
   title: 'How We Work',
-  description: 'From discovery call to first pickup — exactly how Mayura onboards enterprise clients in 3 weeks.',
+  description: 'From discovery call to first pickup - exactly how Mayura onboards enterprise clients in 3 weeks.',
 }
 
 const steps = [
@@ -43,7 +43,7 @@ const steps = [
     timeline: 'Week 2',
     color: '#FFCC35',
     what: [
-      'Full fleet deployment — zero cost to you',
+      'Full fleet deployment - zero cost to you',
       'Your admin team gets live Commute dashboard access',
       'Employees receive trip alerts and driver details',
       '24/7 command centre monitoring throughout',
@@ -94,7 +94,7 @@ export default function HowWeWorkPage() {
             <span style={{ color: '#FFCC35' }}>In 3 Weeks. Guaranteed.</span>
           </h1>
           <p className="text-white/70 text-xl leading-relaxed">
-            We&apos;ve refined our onboarding process to get your enterprise transport programme live — fast,
+            We&apos;ve refined our onboarding process to get your enterprise transport programme live - fast,
             seamlessly, and with zero disruption to your employees.
           </p>
         </div>

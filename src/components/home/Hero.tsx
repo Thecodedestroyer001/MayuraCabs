@@ -1,5 +1,6 @@
 'use client'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -10,13 +11,26 @@ export default function Hero() {
   const ctaRef = useRef<HTMLDivElement>(null)
   const statsRef = useRef<HTMLDivElement>(null)
 
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const fleetImages = [
+    '/sedan-transparent.png',
+    '/van-transparent.png',
+    '/bus-transparent.png'
+  ]
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % fleetImages.length)
+    }, 4000)
+    return () => clearInterval(interval)
+  }, [])
+
   useEffect(() => {
     const timeline = [
       { el: headlineRef.current, delay: 100 },
       { el: subRef.current, delay: 350 },
       { el: ctaRef.current, delay: 550 },
       { el: statsRef.current, delay: 750 },
-      { el: carRef.current, delay: 200 },
     ]
     timeline.forEach(({ el, delay }) => {
       if (el) {
@@ -31,23 +45,11 @@ export default function Hero() {
         }, delay)
       }
     })
-    // Car special animation
-    if (carRef.current) {
-      carRef.current.style.opacity = '0'
-      carRef.current.style.transform = 'translateX(80px)'
-      setTimeout(() => {
-        if (carRef.current) {
-          carRef.current.style.transition = 'opacity 1s ease, transform 1s cubic-bezier(0.16, 1, 0.3, 1)'
-          carRef.current.style.opacity = '1'
-          carRef.current.style.transform = 'translateX(0)'
-        }
-      }, 300)
-    }
   }, [])
 
   return (
     <section
-      className="relative min-h-screen bg-brand-black overflow-hidden noise-overlay grid-bg pt-32 lg:pt-40 pb-16 lg:pb-24"
+      className="relative min-h-screen bg-brand-black overflow-hidden noise-overlay grid-bg pt-24 lg:pt-28 pb-16 lg:pb-24"
       aria-label="Hero section"
     >
       {/* Radial yellow glow */}
@@ -92,7 +94,7 @@ export default function Hero() {
               className="text-white/70 text-lg leading-relaxed mb-8 max-w-md"
             >
               AI-powered, reliable corporate mobility for Bengaluru&apos;s top enterprises. 
-              Zero operational headaches — guaranteed.
+              Zero operational headaches - guaranteed.
             </p>
 
             {/* CTAs */}
@@ -143,21 +145,21 @@ export default function Hero() {
           >
             <div className="relative">
 
-              {/* Floating car */}
-              <div className="hero-float -translate-y-12 md:-translate-y-20 lg:-translate-y-32 scale-110 md:scale-125 lg:scale-125 xl:scale-150">
-                <Image
-                  src="/car-mockup-transparent.png"
+              {/* Floating car slider */}
+              <div className="hero-float translate-y-0 md:-translate-y-8 lg:-translate-y-12 scale-110 md:scale-125 lg:scale-125 xl:scale-150 relative h-[400px] sm:h-[500px] md:h-[600px] w-full min-w-[320px] md:min-w-[500px] flex items-center justify-center overflow-visible">
+                <motion.img
+                  key={currentImageIndex}
+                  src={fleetImages[currentImageIndex]}
                   alt="Mayura branded corporate vehicle"
-                  width={1000}
-                  height={671}
-                  style={{ width: '100%', height: 'auto', maxWidth: '900px' }}
-                  className="object-contain drop-shadow-2xl"
-                  priority
+                  initial={{ opacity: 0, scale: 0.85, y: 30 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ duration: 1, type: "spring", bounce: 0.4 }}
+                  className="w-full h-auto max-w-[900px] object-contain drop-shadow-2xl absolute"
                 />
               </div>
               {/* Floating badge - Free Pilot */}
               <div
-                className="absolute -bottom-4 left-4 bg-brand-yellow text-brand-black px-4 py-2 rounded-xl shadow-2xl hero-float-delayed"
+                className="absolute bottom-8 left-8 md:bottom-16 md:left-16 bg-brand-yellow text-brand-black px-4 py-2 rounded-xl shadow-2xl hero-float-delayed"
               >
                 <div className="text-xs font-bold uppercase tracking-wide">Free 7-Day Pilot</div>
                 <div className="text-xs font-medium opacity-70">No commitment required</div>

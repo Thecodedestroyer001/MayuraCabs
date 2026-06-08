@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import FooterCTA from '@/components/shared/FooterCTA'
 import HorizontalGarage from '@/components/services/HorizontalGarage'
+import { Building2, Bus, Handshake, Zap, Smartphone, Plane } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Corporate Employee Transport Services Bengaluru',
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 const services = [
   {
     id: 'daily-commute',
-    icon: '🏢',
+    icon: <Building2 className="w-8 h-8 md:w-10 md:h-10 text-brand-black" />,
     title: 'Employee Daily Commute',
     tagline: 'End-to-end managed pick-up and drop for your entire workforce.',
     included: [
@@ -27,9 +28,9 @@ const services = [
   },
   {
     id: 'shuttle',
-    icon: '🚌',
+    icon: <Bus className="w-8 h-8 md:w-10 md:h-10 text-brand-black" />,
     title: 'Fixed-Route Shuttle Service',
-    tagline: 'High-capacity buses on pre-planned corridors — cost-effective for large workforces.',
+    tagline: 'High-capacity buses on pre-planned corridors - cost-effective for large workforces.',
     included: [
       'Pre-planned routes based on employee density',
       'Dedicated boarding stops with ETA updates',
@@ -43,7 +44,7 @@ const services = [
   },
   {
     id: 'car-rentals',
-    icon: '🤝',
+    icon: <Handshake className="w-8 h-8 md:w-10 md:h-10 text-brand-black" />,
     title: 'Corporate Car Rentals',
     tagline: 'Dedicated vehicles for executives, client visits, and ad-hoc business travel.',
     included: [
@@ -59,8 +60,8 @@ const services = [
   },
   {
     id: 'ev-fleet',
-    icon: '⚡',
-    title: 'EV Fleet — Zero Emission Transport',
+    icon: <Zap className="w-8 h-8 md:w-10 md:h-10 text-brand-black" />,
+    title: 'EV Fleet - Zero Emission Transport',
     tagline: 'Fully electric vehicles for enterprises committed to sustainability targets.',
     included: [
       'Tata Nexon EV and Tigor EV in fleet',
@@ -75,9 +76,9 @@ const services = [
   },
   {
     id: 'platform',
-    icon: '📱',
+    icon: <Smartphone className="w-8 h-8 md:w-10 md:h-10 text-brand-black" />,
     title: 'Commute Platform',
-    tagline: 'Proprietary enterprise mobility software — included free with all Mayura services.',
+    tagline: 'Proprietary enterprise mobility software - included free with all Mayura services.',
     features: [
       {
         title: 'Smart Scheduling',
@@ -96,15 +97,15 @@ const services = [
         desc: 'Single monthly invoice, itemised by employee, route, shift, and vehicle type.',
       },
     ],
-    bestFor: 'All enterprise clients — included as standard, no additional cost',
+    bestFor: 'All enterprise clients - included as standard, no additional cost',
   },
   {
     id: 'airport',
-    icon: '✈️',
+    icon: <Plane className="w-8 h-8 md:w-10 md:h-10 text-brand-black" />,
     title: 'Airport & Outstation Travel',
     tagline: 'Premium, reliable transfers for airport and inter-city business travel.',
     included: [
-      'Kempegowda International Airport (BLR) — all terminals',
+      'Kempegowda International Airport (BLR) - all terminals',
       'Flight tracking for accurate pickup timing',
       'Meet-and-greet inside terminal (on request)',
       'Outstation travel: Mysuru, Chennai, Hyderabad corridors',
@@ -112,7 +113,7 @@ const services = [
       'Corporate account with post-trip invoicing',
     ],
     fleet: ['Executive Sedans', 'Premium SUVs', 'Tempo Traveller for team travel'],
-    bestFor: 'All enterprises — leadership teams, client delegations, team off-sites',
+    bestFor: 'All enterprises - leadership teams, client delegations, team off-sites',
   },
 ]
 
@@ -139,7 +140,7 @@ export default function ServicesPage() {
               <span style={{ color: '#FFCC35' }}>Every Mobility Need. Covered.</span>
             </h1>
             <p className="text-white/70 text-xl leading-relaxed">
-              From daily employee commutes to EV fleets and airport transfers — Mayura manages your
+              From daily employee commutes to EV fleets and airport transfers - Mayura manages your
               entire transport programme so your HR and admin team doesn&apos;t have to.
             </p>
           </div>

@@ -1,41 +1,43 @@
+import { Laptop, Globe, PhoneCall, Landmark, TrendingUp, Rocket, Microscope, Lightbulb } from 'lucide-react'
+
 const industries = [
   {
-    icon: '💻',
+    icon: Laptop,
     name: 'IT / ITES',
     companies: 'Infosys, Wipro, TCS, Capgemini',
   },
   {
-    icon: '🌐',
+    icon: Globe,
     name: 'Global Capability Centres',
     companies: 'SAP Labs, LinkedIn, Google, Intel',
   },
   {
-    icon: '📞',
+    icon: PhoneCall,
     name: 'BPO / KPO',
     companies: 'Concentrix, EXL, Mphasis, WNS',
   },
   {
-    icon: '🏦',
+    icon: Landmark,
     name: 'BFSI',
     companies: 'HSBC, Citi, Goldman Sachs, JPMorgan',
   },
   {
-    icon: '📈',
+    icon: TrendingUp,
     name: 'Consulting',
     companies: 'Deloitte, PwC, KPMG, McKinsey',
   },
   {
-    icon: '🚀',
+    icon: Rocket,
     name: 'Product Companies',
     companies: 'Swiggy, Zepto, Razorpay, Meesho',
   },
   {
-    icon: '🔬',
+    icon: Microscope,
     name: 'Semiconductor',
     companies: 'Qualcomm, NXP, Micron, STMicro',
   },
   {
-    icon: '💡',
+    icon: Lightbulb,
     name: 'High-Growth Startups',
     companies: 'Series B+ with 200+ employees',
   },
@@ -80,7 +82,9 @@ export default function IndustriesSection() {
               key={ind.name}
               className="reveal card-hover group bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-brand-yellow/40 hover:bg-brand-yellow/5 transition-all cursor-default"
             >
-              <div className="text-3xl mb-4">{ind.icon}</div>
+              <div className="mb-4 text-brand-yellow">
+                <ind.icon className="w-8 h-8" />
+              </div>
               <h3 className="font-black text-white text-sm mb-2 group-hover:text-brand-yellow transition-colors leading-snug">
                 {ind.name}
               </h3>

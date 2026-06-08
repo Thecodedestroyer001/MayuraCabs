@@ -35,10 +35,10 @@ export default function HomePage() {
       <ScrollCarAnimation />
       <TrustBar />
       <ProblemSection />
+      <PilotOffer />
       <SolutionSection />
       <ServicesOverview />
       <IndustriesSection />
-      <PilotOffer />
       <FooterCTA />
     </>
   )

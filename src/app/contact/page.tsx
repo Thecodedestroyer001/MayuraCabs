@@ -56,11 +56,13 @@ const contactOptions = [
   },
 ]
 
+import { Map, RefreshCw, Car, FileText } from 'lucide-react'
+
 const incentives = [
-  { icon: '🗺️', title: 'Free Transport Audit', desc: 'Full analysis of your current setup, cost, and inefficiencies.' },
-  { icon: '🔄', title: 'Free Route Optimisation Analysis', desc: 'AI-powered route design for your employee addresses.' },
-  { icon: '🚗', title: 'Free 7-Day Pilot', desc: 'Full fleet deployment at zero cost. No commitment required.' },
-  { icon: '📄', title: 'Free SLA Template', desc: 'Our proven transport SLA — adapt it for any vendor you work with.' },
+  { icon: Map, title: 'Free Transport Audit', desc: 'Full analysis of your current setup, cost, and inefficiencies.' },
+  { icon: RefreshCw, title: 'Free Route Optimisation Analysis', desc: 'AI-powered route design for your employee addresses.' },
+  { icon: Car, title: 'Free 7-Day Pilot', desc: 'Full fleet deployment at zero cost. No commitment required.' },
+  { icon: FileText, title: 'Free SLA Template', desc: 'Our proven transport SLA - adapt it for any vendor you work with.' },
 ]
 
 const serviceOptions = [
@@ -133,7 +135,9 @@ export default function ContactPage() {
               <h3 className="text-lg font-black text-brand-black mb-6">When You Contact Us, You Get:</h3>
               {incentives.map((inc) => (
                 <div key={inc.title} className="bg-brand-gray-100 rounded-2xl p-5">
-                  <div className="text-2xl mb-2">{inc.icon}</div>
+                  <div className="mb-3 text-brand-black">
+                    <inc.icon className="w-6 h-6" />
+                  </div>
                   <div className="font-bold text-brand-black text-sm mb-1">{inc.title}</div>
                   <div className="text-brand-gray-500 text-xs leading-relaxed">{inc.desc}</div>
                 </div>
@@ -144,7 +148,7 @@ export default function ContactPage() {
                 <h3 className="font-bold text-brand-yellow text-sm mb-3">Office</h3>
                 <p className="text-white/60 text-xs leading-relaxed">
                   Mayura Car Rentals LLP<br />
-                  Bengaluru, Karnataka — 560001<br />
+                  Bengaluru, Karnataka - 560001<br />
                   India
                 </p>
                 <p className="text-white/40 text-xs mt-3">

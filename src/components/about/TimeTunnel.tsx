@@ -11,11 +11,17 @@ function TimelineItem({ item, index, total, scrollYProgress }: { item: {year: st
   const outFull = start + step * 0.8
   const end = start + step
 
+  const isLast = index === total - 1
+
   // Z-axis zoom effect (continuous)
-  const scale = useTransform(scrollYProgress, [start, end], [0.5, 3])
+  const scale = useTransform(scrollYProgress, [start, end], [0.5, isLast ? 1.5 : 3])
   
   // Opacity: fades in, stays fully visible, fades out
-  const opacity = useTransform(scrollYProgress, [start, inFull, outFull, end], [0, 1, 1, 0])
+  const opacity = useTransform(
+    scrollYProgress, 
+    [start, inFull, outFull, end], 
+    [0, 1, 1, isLast ? 1 : 0]
+  )
 
   return (
     <motion.div 
@@ -52,7 +58,7 @@ export default function TimeTunnel({ timeline }: { timeline: {year: string, text
   if (!timeline || timeline.length === 0) return null;
 
   return (
-    <div ref={containerRef} className="relative h-[300vh] bg-brand-black w-full overflow-hidden">
+    <div ref={containerRef} className="relative h-[400vh] bg-brand-black w-full">
       <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden">
         
         {/* Deep Tunnel Background Effect */}

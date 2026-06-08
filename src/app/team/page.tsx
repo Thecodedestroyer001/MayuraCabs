@@ -4,7 +4,7 @@ import StackingCards from '@/components/team/StackingCards'
 
 export const metadata: Metadata = {
   title: 'Our Team',
-  description: 'Meet the team behind Mayura Car Rentals — building Bengaluru\'s most reliable corporate transport partner.',
+  description: 'Meet the team behind Mayura Car Rentals - building Bengaluru\'s most reliable corporate transport partner.',
 }
 
 const team = [
@@ -67,7 +67,7 @@ export default function TeamPage() {
             <span style={{ color: '#FFCC35' }}>Mayura Car Rentals</span>
           </h1>
           <p className="text-white/70 text-xl leading-relaxed">
-            Four operators who lived the corporate transport problem — and built the solution they always wished existed.
+            Four operators who lived the corporate transport problem - and built the solution they always wished existed.
           </p>
         </div>
       </section>

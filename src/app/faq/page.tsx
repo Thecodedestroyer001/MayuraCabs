@@ -7,11 +7,11 @@ const faqCategories = [
     questions: [
       {
         q: 'What is Mayura Car Rentals?',
-        a: 'Mayura Car Rentals is a B2B corporate mobility company based in Bengaluru. We provide end-to-end employee transport management for enterprises — combining a professional fleet with our proprietary Commute platform to give HR and admin teams full visibility and control.',
+        a: 'Mayura Car Rentals is a B2B corporate mobility company based in Bengaluru. We provide end-to-end employee transport management for enterprises - combining a professional fleet with our proprietary Commute platform to give HR and admin teams full visibility and control.',
       },
       {
         q: 'How is Mayura different from aggregator apps like Ola or Uber for Business?',
-        a: 'Aggregators provide on-demand cab bookings — they don\'t manage your transport programme. Mayura is an integrated transport partner: we design routes, deploy dedicated fleet, provide a command centre, handle driver management, and give you consolidated billing. We\'re accountable for your entire programme, not individual rides.',
+        a: 'Aggregators provide on-demand cab bookings - they don\'t manage your transport programme. Mayura is an integrated transport partner: we design routes, deploy dedicated fleet, provide a command centre, handle driver management, and give you consolidated billing. We\'re accountable for your entire programme, not individual rides.',
       },
       {
         q: 'Which areas in Bengaluru does Mayura cover?',
@@ -36,7 +36,7 @@ const faqCategories = [
       },
       {
         q: 'What is the minimum fleet size you deploy?',
-        a: 'Our programmes typically start at a minimum of 10–15 vehicles or 200+ employee trips per day to ensure route optimisation is effective. However, we evaluate each enterprise\'s needs individually — contact us for a specific assessment.',
+        a: 'Our programmes typically start at a minimum of 10–15 vehicles or 200+ employee trips per day to ensure route optimisation is effective. However, we evaluate each enterprise\'s needs individually - contact us for a specific assessment.',
       },
     ],
   },
@@ -70,7 +70,7 @@ const faqCategories = [
       },
       {
         q: 'Do you offer SLA guarantees with penalty clauses?',
-        a: 'Yes. Every Mayura contract includes a written SLA with defined on-time thresholds and financial penalties for repeated SLA breaches. We hold ourselves accountable — not just verbally.',
+        a: 'Yes. Every Mayura contract includes a written SLA with defined on-time thresholds and financial penalties for repeated SLA breaches. We hold ourselves accountable - not just verbally.',
       },
       {
         q: 'What happens if a vehicle breaks down mid-trip?',

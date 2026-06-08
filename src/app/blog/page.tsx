@@ -23,7 +23,7 @@ const articles = [
     category: 'Fleet Strategy',
     title: 'EV Fleet vs. Petrol Fleet: What Admin Managers Need to Know in 2026',
     keyword: 'EV fleet corporate transport India',
-    desc: 'Total cost of ownership comparison, charging infrastructure requirements, and ESG reporting benefits — everything you need to make the fleet decision.',
+    desc: 'Total cost of ownership comparison, charging infrastructure requirements, and ESG reporting benefits - everything you need to make the fleet decision.',
     readTime: '10 min read',
     href: '/blog/ev-vs-petrol-fleet-admin-guide',
   },
@@ -31,7 +31,7 @@ const articles = [
     category: 'Legal & Compliance',
     title: 'How to Write a Corporate Transport SLA That Actually Protects Your Company',
     keyword: 'corporate transport SLA India',
-    desc: 'The 8 non-negotiable clauses every transport SLA must include — with penalty structures, breakdown protocols, and compliance requirements.',
+    desc: 'The 8 non-negotiable clauses every transport SLA must include - with penalty structures, breakdown protocols, and compliance requirements.',
     readTime: '9 min read',
     href: '/blog/corporate-transport-sla-guide',
   },
@@ -39,7 +39,7 @@ const articles = [
     category: 'Technology',
     title: 'Corporate Transport Technology in 2025: What Every Enterprise Should Be Using',
     keyword: 'corporate transport technology platform India',
-    desc: 'From live fleet tracking and AI route optimisation to automated billing — the technology stack modern enterprises use to manage employee mobility.',
+    desc: 'From live fleet tracking and AI route optimisation to automated billing - the technology stack modern enterprises use to manage employee mobility.',
     readTime: '11 min read',
     href: '/blog/corporate-transport-technology-2025',
   },
@@ -47,7 +47,7 @@ const articles = [
     category: 'Procurement',
     title: '10 Questions Every HR Manager Should Ask Before Signing a Transport Contract',
     keyword: 'corporate transport vendor evaluation India',
-    desc: 'The due diligence checklist that separates professional transport partners from unreliable vendors — ask these before you sign anything.',
+    desc: 'The due diligence checklist that separates professional transport partners from unreliable vendors - ask these before you sign anything.',
     readTime: '7 min read',
     href: '/blog/transport-contract-questions-checklist',
   },
@@ -84,7 +84,7 @@ export default function BlogPage() {
             <span style={{ color: '#FFCC35' }}>and Operations Leaders</span>
           </h1>
           <p className="text-white/70 text-xl leading-relaxed">
-            Practical guides on corporate employee transport, fleet management, and enterprise mobility —
+            Practical guides on corporate employee transport, fleet management, and enterprise mobility -
             from the team that operates it every day.
           </p>
         </div>

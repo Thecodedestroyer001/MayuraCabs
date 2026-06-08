@@ -49,11 +49,11 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="relative z-10 flex-shrink-0" aria-label="Mayura Car Rentals - Home">
             <Image
-              src="/logo-white.png"
+              src="/logo-custom.png"
               alt="Mayura Car Rentals"
-              width={220}
-              height={66}
-              style={{ height: '64px', width: 'auto' }}
+              width={266}
+              height={80}
+              style={{ height: '80px', width: 'auto' }}
               className="object-contain"
               priority
             />
@@ -115,7 +115,7 @@ export default function Navbar() {
         style={{ zIndex: 50000 }}
       >
         <div className="flex flex-col items-center justify-center h-full gap-8 px-8">
-          <Image src="/logo-white.png" alt="Mayura Car Rentals" width={240} height={72} style={{ height: '72px', width: 'auto' }} className="object-contain mb-6" />
+          <Image src="/logo-custom.png" alt="Mayura Car Rentals" width={320} height={96} style={{ height: '96px', width: 'auto' }} className="object-contain mb-6" />
           {navLinks.map((link, i) => (
             <Link
               key={link.href}

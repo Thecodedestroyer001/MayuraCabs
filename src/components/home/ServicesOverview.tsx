@@ -1,43 +1,44 @@
 import Link from 'next/link'
+import { Building2, Bus, Handshake, Zap, Smartphone, Plane } from 'lucide-react'
 
 const services = [
   {
-    icon: '🏢',
+    icon: Building2,
     title: 'Employee Daily Commute',
     desc: 'End-to-end managed pick-up and drop service for your entire workforce. Dynamic routing, GPS tracking, and real-time alerts.',
     href: '/services#daily-commute',
     accent: '#FFCC35',
   },
   {
-    icon: '🚌',
+    icon: Bus,
     title: 'Fixed-Route Shuttle',
     desc: 'High-capacity shuttle buses on pre-planned corridors. Cost-effective for 50+ employees on similar routes.',
     href: '/services#shuttle',
     accent: '#FFCC35',
   },
   {
-    icon: '🤝',
+    icon: Handshake,
     title: 'Corporate Car Rentals',
     desc: 'Dedicated vehicles for executives, client visits, airport transfers, and ad-hoc business travel.',
     href: '/services#car-rentals',
     accent: '#FFCC35',
   },
   {
-    icon: '⚡',
+    icon: Zap,
     title: 'EV Fleet',
     desc: 'Fully electric vehicles with zero-emission reporting for ESG compliance. Tata Nexon EV and Tigor EV ready.',
     href: '/services#ev-fleet',
     accent: '#FFCC35',
   },
   {
-    icon: '📱',
+    icon: Smartphone,
     title: 'Commute Platform',
     desc: 'Our proprietary platform gives your admin team real-time visibility, automated billing, and SLA dashboards.',
     href: '/services#platform',
     accent: '#FFCC35',
   },
   {
-    icon: '✈️',
+    icon: Plane,
     title: 'Airport & Outstation',
     desc: 'Premium vehicle options for airport transfers, outstation travel, and inter-city corporate trips.',
     href: '/services#airport',
@@ -71,8 +72,8 @@ export default function ServicesOverview() {
               className="reveal card-hover group relative bg-white border border-gray-100 rounded-2xl p-7 flex flex-col gap-4 shadow-sm hover:border-brand-yellow/50 hover:shadow-brand-yellow/10 hover:shadow-xl transition-all"
             >
               {/* Icon */}
-              <div className="w-14 h-14 rounded-2xl bg-brand-gray-100 flex items-center justify-center text-2xl group-hover:bg-brand-yellow/10 transition-colors flex-shrink-0">
-                {service.icon}
+              <div className="w-14 h-14 rounded-2xl bg-brand-gray-100 flex items-center justify-center text-brand-black group-hover:bg-brand-yellow/10 group-hover:text-brand-yellow transition-colors flex-shrink-0">
+                <service.icon className="w-6 h-6" />
               </div>
 
               <div className="flex-1">

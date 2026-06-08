@@ -1,31 +1,33 @@
+import { Banknote, ClipboardList, Frown, LineChart, Leaf, RefreshCw } from 'lucide-react'
+
 const painPoints = [
   {
-    icon: '💸',
+    icon: Banknote,
     problem: 'Skyrocketing and unpredictable transport costs',
     desc: 'No visibility into per-trip costs, surge pricing, or billing disputes with multiple vendors.',
   },
   {
-    icon: '📋',
+    icon: ClipboardList,
     problem: 'Multiple vendors, zero accountability',
     desc: 'Managing 3–5 cab vendors with different SLAs, no single point of contact, constant escalations.',
   },
   {
-    icon: '😟',
+    icon: Frown,
     problem: 'Employee safety and late pickups',
     desc: 'Drivers who are unverified, vehicles without GPS, and employees left stranded after late shifts.',
   },
   {
-    icon: '📊',
+    icon: LineChart,
     problem: 'Zero data or reporting',
     desc: 'No dashboards, no utilisation reports, no way to justify transport spend to finance teams.',
   },
   {
-    icon: '🌿',
+    icon: Leaf,
     problem: 'No path to sustainability goals',
-    desc: 'ESG commitments require EV fleet data — traditional vendors can\'t provide it.',
+    desc: 'ESG commitments require EV fleet data - traditional vendors can\'t provide it.',
   },
   {
-    icon: '🔄',
+    icon: RefreshCw,
     problem: 'Route chaos during office expansions',
     desc: 'Adding new offices or shift changes creates weeks of manual route replanning and employee complaints.',
   },
@@ -73,8 +75,8 @@ export default function ProblemSection() {
               key={point.problem}
               className="reveal card-hover bg-white border border-gray-100 rounded-2xl p-7 group shadow-sm hover:border-brand-yellow/30"
             >
-              <div className="w-12 h-12 rounded-xl bg-brand-gray-100 flex items-center justify-center text-2xl mb-5 group-hover:bg-brand-yellow/10 transition-colors">
-                {point.icon}
+              <div className="w-12 h-12 rounded-xl bg-brand-gray-100 flex items-center justify-center mb-5 group-hover:bg-brand-yellow/10 transition-colors text-brand-black">
+                <point.icon className="w-6 h-6" />
               </div>
               <h3 className="font-bold text-brand-black text-base mb-2 leading-snug">
                 {point.problem}
@@ -89,7 +91,7 @@ export default function ProblemSection() {
           <div className="bg-brand-gray-100 rounded-2xl p-8 border border-gray-200">
             <p className="text-brand-black text-xl font-bold italic leading-relaxed">
               &ldquo;If you manage transport for 200+ employees, you deserve a partner who treats it like a
-              mission-critical operation — not an afterthought.&rdquo;
+              mission-critical operation - not an afterthought.&rdquo;
             </p>
           </div>
         </div>
