@@ -147,7 +147,7 @@ export default function Hero() {
             <div className="relative">
 
               {/* Floating car slider */}
-              <div className="hero-float translate-y-0 md:-translate-y-8 lg:-translate-y-12 scale-110 md:scale-125 lg:scale-125 xl:scale-150 relative h-[400px] sm:h-[500px] md:h-[600px] w-full min-w-[280px] sm:min-w-[320px] md:min-w-[500px] flex items-center justify-center overflow-visible">
+              <div className="hero-float translate-y-0 md:-translate-y-8 lg:-translate-y-12 scale-[1.3] sm:scale-[1.35] md:scale-125 lg:scale-125 xl:scale-150 relative h-[250px] sm:h-[350px] md:h-[600px] w-full min-w-[280px] sm:min-w-[320px] md:min-w-[500px] flex items-center justify-center overflow-visible">
                 <motion.img
                   key={currentImageIndex}
                   src={fleetImages[currentImageIndex]}
@@ -160,14 +160,14 @@ export default function Hero() {
               </div>
               {/* Floating badge - Free Pilot */}
               <div
-                className="absolute bottom-8 left-8 md:bottom-16 md:left-16 bg-brand-yellow text-brand-black px-4 py-2 rounded-xl shadow-2xl hero-float-delayed"
+                className="absolute -bottom-4 left-4 sm:bottom-8 sm:left-8 md:bottom-16 md:left-16 bg-brand-yellow text-brand-black px-4 py-2 rounded-xl shadow-2xl hero-float-delayed"
               >
                 <div className="text-xs font-bold uppercase tracking-wide">Free 7-Day Pilot</div>
                 <div className="text-xs font-medium opacity-70">No commitment required</div>
               </div>
               {/* Floating badge - AIS140 */}
               <div
-                className="absolute top-4 right-4 bg-white/10 backdrop-blur-md text-white px-4 py-2 rounded-xl border border-white/20 hero-float"
+                className="absolute -top-4 right-4 sm:top-4 sm:right-4 md:top-8 md:right-8 bg-white/10 backdrop-blur-md text-white px-4 py-2 rounded-xl border border-white/20 hero-float"
                 style={{ animationDelay: '1s' }}
               >
                 <div className="text-xs font-bold">AIS-140 Compliant</div>

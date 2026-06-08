@@ -28,7 +28,7 @@ export default function ScrollCarAnimation() {
   const f3Y = useTransform(scrollYProgress, [0.65, 0.75], [50, 0])
 
   return (
-    <section ref={containerRef} className="relative h-[250vh] bg-brand-black" aria-label="Animated features">
+    <section ref={containerRef} className="relative h-[300vh] md:h-[400vh] bg-brand-black" aria-label="Animated features">
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
         
         {/* Background Subtle Elements */}
@@ -74,14 +74,10 @@ export default function ScrollCarAnimation() {
             <div className="absolute top-1/2 -left-20 md:-left-40 w-40 md:w-64 h-1 bg-gradient-to-r from-transparent to-brand-yellow/60 blur-[2px] transform -translate-y-1/2" />
             <div className="absolute top-2/3 -left-32 md:-left-64 w-32 md:w-48 h-0.5 bg-gradient-to-r from-transparent to-white/40 blur-[1px]" />
             
-            <Image
-              src="/car-mockup-transparent.png"
+            <img
+              src="/sedan-transparent.png"
               alt="Mayura Fleet Vehicle"
-              width={1100}
-              height={738}
-              style={{ width: '100%', height: 'auto' }}
-              className="drop-shadow-2xl"
-              priority
+              className="w-full h-auto object-contain drop-shadow-2xl"
             />
           </div>
         </motion.div>

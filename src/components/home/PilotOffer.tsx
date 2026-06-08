@@ -3,9 +3,7 @@ import Link from 'next/link'
 export default function PilotOffer() {
   return (
     <section className="section-sm relative overflow-hidden bg-brand-yellow border-y-8 border-brand-black" aria-labelledby="pilot-heading">
-      <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent pointer-events-none" />
       {/* Decorative circles */}
-      <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/40 blur-[50px] pointer-events-none" />
       <div className="absolute -bottom-20 -left-20 w-60 h-60 rounded-full bg-brand-black/10 blur-[50px] pointer-events-none" />
 
       <div className="container relative z-10">

@@ -64,7 +64,7 @@ export default function RootLayout({
           href="https://wa.me/91XXXXXXXXXX?text=Hi%20Mayura%2C%20I'm%20interested%20in%20corporate%20transport%20for%20my%20company"
           target="_blank"
           rel="noopener noreferrer"
-          className="floating-wa"
+          className="floating-wa hidden md:flex"
           aria-label="Chat on WhatsApp"
         >
           <svg width="28" height="28" viewBox="0 0 24 24" fill="white">

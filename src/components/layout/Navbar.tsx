@@ -47,14 +47,13 @@ export default function Navbar() {
       >
         <div className="container flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="relative z-10 flex-shrink-0" aria-label="Mayura Car Rentals - Home">
+          <Link href="/" className="relative z-10 flex-shrink-0 flex items-center" aria-label="Mayura Car Rentals - Home">
             <Image
               src="/logo-custom.png"
               alt="Mayura Car Rentals"
               width={266}
               height={80}
-              style={{ height: '80px', width: 'auto' }}
-              className="object-contain"
+              className="h-10 sm:h-12 md:h-16 lg:h-20 w-auto object-contain"
               priority
             />
           </Link>
