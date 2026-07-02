@@ -27,6 +27,62 @@ export default function HorizontalGarage({ services }: { services: any[] }) {
     return () => window.removeEventListener('resize', updateRange)
   }, [])
 
+  // Handle hash navigation to scroll to specific cards
+  useEffect(() => {
+    const handleHash = () => {
+      const hash = window.location.hash.replace('#', '')
+      if (!hash || !targetRef.current) return
+      
+      const index = services.findIndex(s => s.id === hash)
+      if (index !== -1 && trackRef.current) {
+        const cardElement = document.getElementById(hash)
+        if (!cardElement) return
+
+        // 1. Calculate how many pixels the track needs to translate to center this card
+        const cardLeft = cardElement.offsetLeft
+        const cardWidth = cardElement.offsetWidth
+        const viewportWidth = window.innerWidth
+        
+        // We want the card in the middle: target translation = cardLeft - (viewportWidth / 2) + (cardWidth / 2)
+        let targetTranslation = cardLeft - (viewportWidth / 2) + (cardWidth / 2)
+        
+        // 2. Clamp the translation so we don't scroll past the start or end of the track
+        // The maximum translation is our scrollRange (calculated in updateRange)
+        // If scrollRange isn't ready yet, estimate it:
+        const currentScrollRange = scrollRange || (trackRef.current.scrollWidth - viewportWidth + 150)
+        targetTranslation = Math.max(0, Math.min(targetTranslation, currentScrollRange))
+        
+        // 3. Convert that translation into a progress ratio [0, 1]
+        const progress = targetTranslation / currentScrollRange
+        
+        // 4. Convert progress into vertical scroll distance
+        const sectionHeight = targetRef.current.offsetHeight
+        const viewportHeight = window.innerHeight
+        const scrollDistance = (sectionHeight - viewportHeight) * progress
+        
+        // 5. Add the section's absolute top offset to the body
+        const rect = targetRef.current.getBoundingClientRect()
+        const sectionTop = rect.top + window.scrollY
+        
+        window.scrollTo({
+          top: sectionTop + scrollDistance,
+          behavior: 'smooth'
+        })
+      }
+    }
+
+    // Run after a short delay to allow layout and scrollRange to settle
+    const timer = setTimeout(handleHash, 300)
+    
+    // Listen for manual hash changes (e.g. clicking a footer link while already on the page)
+    window.addEventListener('hashchange', handleHash)
+    
+    return () => {
+      clearTimeout(timer)
+      window.removeEventListener('hashchange', handleHash)
+    }
+  }, [services])
+
   // Map scroll progress to exact pixel translation
   const x = useTransform(scrollYProgress, [0, 1], [0, -scrollRange])
 

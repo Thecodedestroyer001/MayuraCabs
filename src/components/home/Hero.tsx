@@ -162,10 +162,9 @@ export default function Hero() {
               {/* Floating badge - AIS140 */}
               <div
                 className="absolute -top-4 right-4 sm:top-4 sm:right-4 md:top-8 md:right-8 bg-white/10 backdrop-blur-md text-white px-4 py-2 rounded-xl border border-white/20 hero-float"
-                style={{ animationDelay: '1s' }}
-              >
-                <div className="text-xs font-bold">AIS-140 Compliant</div>
-                <div className="text-xs opacity-60">Government certified</div>
+                style={{ animationDelay: '1s' }}>
+                              <div className="text-xs font-bold">AIS-140 Compliant</div>
+                  <div className="text-xs opacity-60">Government certified</div>
               </div>
             </div>
           </div>
