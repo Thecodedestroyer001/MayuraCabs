@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Figtree } from 'next/font/google'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
-import StickyCTA from '@/components/shared/StickyCTA'
 import { ScrollRevealProvider } from '@/components/shared/ScrollRevealProvider'
 import './globals.css'
 
@@ -18,7 +17,7 @@ export const metadata: Metadata = {
     template: '%s | Mayura Car Rentals',
     default: 'Corporate Employee Transport Bengaluru | Mayura Car Rentals',
   },
-  description: "Bengaluru's integrated corporate mobility company. AI-powered routing, 24/7 command centre, 6 fleet types. Free 7-day pilot for enterprises.",
+  description: "Bengaluru's integrated corporate mobility company. AI-powered routing, 24/7 command centre, 6 fleet types. ",
   keywords: ['corporate employee transport Bengaluru', 'employee cab services IT companies', 'managed corporate mobility', 'corporate car rental Bengaluru'],
   openGraph: {
     siteName: 'Mayura Car Rentals',
@@ -59,7 +58,6 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
-        <StickyCTA />
         <a
           href="https://wa.me/91XXXXXXXXXX?text=Hi%20Mayura%2C%20I'm%20interested%20in%20corporate%20transport%20for%20my%20company"
           target="_blank"

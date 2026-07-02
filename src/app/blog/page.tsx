@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import FooterCTA from '@/components/shared/FooterCTA'
 import { NewsletterForm } from '@/components/shared/NewsletterForm'
 
 const articles = [
@@ -148,7 +147,6 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <FooterCTA />
     </>
   )
 }

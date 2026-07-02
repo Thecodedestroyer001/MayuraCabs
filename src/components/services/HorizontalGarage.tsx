@@ -56,7 +56,8 @@ export default function HorizontalGarage({ services }: { services: any[] }) {
         <motion.div ref={trackRef} style={{ x }} className="flex gap-6 md:gap-10 px-6 md:px-8 max-w-max items-stretch h-max my-auto">
           {services.map((service) => (
             <div 
-              key={service.id} 
+              key={service.id}
+              id={service.id}
               className="w-[85vw] md:w-[70vw] lg:w-[800px] flex-shrink-0 bg-white/5 border border-white/10 rounded-3xl p-6 md:p-10 hover:border-brand-yellow/30 transition-all duration-500 relative overflow-hidden group hover:-translate-y-2 flex flex-col md:flex-row gap-8 md:gap-12"
             >
               {/* Left Column: Title & Tagline */}

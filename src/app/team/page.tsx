@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import FooterCTA from '@/components/shared/FooterCTA'
 import StackingCards from '@/components/team/StackingCards'
 
 export const metadata: Metadata = {
@@ -106,7 +105,6 @@ export default function TeamPage() {
         </div>
       </section>
 
-      <FooterCTA />
     </>
   )
 }

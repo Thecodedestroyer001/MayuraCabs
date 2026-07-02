@@ -6,8 +6,6 @@ import ProblemSection from '@/components/home/ProblemSection'
 import SolutionSection from '@/components/home/SolutionSection'
 import ServicesOverview from '@/components/home/ServicesOverview'
 import IndustriesSection from '@/components/home/IndustriesSection'
-import PilotOffer from '@/components/home/PilotOffer'
-import FooterCTA from '@/components/shared/FooterCTA'
 import ScrollCarAnimation from '@/components/home/ScrollCarAnimation'
 
 export default function HomePage() {
@@ -35,11 +33,9 @@ export default function HomePage() {
       <ScrollCarAnimation />
       <TrustBar />
       <ProblemSection />
-      <PilotOffer />
       <SolutionSection />
       <ServicesOverview />
       <IndustriesSection />
-      <FooterCTA />
     </>
   )
 }

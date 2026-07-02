@@ -3,6 +3,7 @@ import { Car, CarFront, Bus, BusFront, Zap, MapPin, Calendar, LineChart, CreditC
 const fleetTypes = [
   { icon: Car, name: 'Hatchbacks', desc: 'Alto, Swift, i20 - 4-seater comfort' },
   { icon: CarFront, name: 'Sedans', desc: 'Dzire, Amaze - Executive daily commute' },
+  { icon: Car, name: 'Premium / Luxury', desc: 'For Senior Leadership travel' },
   { icon: Car, name: 'SUVs', desc: 'Ertiga, Innova - 6–7 seater pool rides' },
   { icon: BusFront, name: 'Mini Vans', desc: 'Tempo Traveller - 9–12 seater shuttles' },
   { icon: Bus, name: 'Buses', desc: '20–54 seater for large workforce' },
@@ -40,22 +41,21 @@ export default function SolutionSection() {
 
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Fleet column */}
-          <div className="reveal-left bg-gradient-to-br from-brand-yellow/10 to-transparent rounded-3xl p-8 shadow-lg border-2 border-brand-yellow/30 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-yellow/20 blur-[50px] rounded-full pointer-events-none" />
+          <div className="reveal-left bg-white rounded-3xl p-8 shadow-xl border border-gray-100 relative overflow-hidden">
+
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-10 rounded-xl bg-brand-yellow/10 flex items-center justify-center text-xl">🚗</div>
               <div>
-                <h3 className="font-black text-brand-black text-lg">Fleet Built for Enterprise</h3>
-                <p className="text-brand-gray-500 text-sm">6 vehicle categories, every need covered</p>
+                <h3 className="font-black text-brand-black text-lg">Fleet Mix</h3>
               </div>
             </div>
             <div className="space-y-4">
               {fleetTypes.map((item) => (
                 <div
                   key={item.name}
-                  className="flex items-center gap-4 p-4 rounded-xl hover:bg-brand-gray-100 transition-colors group"
+                  className="flex items-center gap-4 p-4 rounded-xl hover:bg-brand-yellow/10 transition-all group"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-brand-gray-100 flex items-center justify-center group-hover:bg-brand-yellow/10 transition-colors flex-shrink-0 text-brand-black">
+                  <div className="w-10 h-10 rounded-lg bg-brand-gray-100 flex items-center justify-center group-hover:bg-brand-yellow/30 transition-colors flex-shrink-0 text-brand-black">
                     <item.icon className="w-5 h-5" />
                   </div>
                   <div>
@@ -96,7 +96,7 @@ export default function SolutionSection() {
 
             {/* CTA inside */}
             <div className="mt-8 p-4 rounded-xl bg-brand-yellow/10 border border-brand-yellow/20">
-              <p className="text-brand-yellow text-sm font-semibold mb-1">Free Platform Demo Available</p>
+              <p className="text-brand-yellow text-sm font-semibold mb-1">Platform Demo Available</p>
               <p className="text-white/60 text-xs">See the Commute dashboard live - takes 20 minutes.</p>
             </div>
           </div>

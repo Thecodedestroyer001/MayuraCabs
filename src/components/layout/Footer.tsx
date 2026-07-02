@@ -1,152 +1,144 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-const footerLinks = {
-  company: [
-    { label: 'About Us', href: '/about' },
-    { label: 'Our Team', href: '/team' },
-    { label: 'How We Work', href: '/how-we-work' },
-    { label: 'Blog', href: '/blog' },
-    { label: 'Careers', href: 'mailto:careers@mayuracabs.com' },
-  ],
-  services: [
-    { label: 'Employee Daily Commute', href: '/services#daily-commute' },
-    { label: 'Fixed-Route Shuttle', href: '/services#shuttle' },
-    { label: 'Corporate Car Rentals', href: '/services#car-rentals' },
-    { label: 'EV Fleet', href: '/services#ev-fleet' },
-    { label: 'Commute Platform', href: '/services#platform' },
-    { label: 'Airport & Outstation', href: '/services#airport' },
-  ],
-  legal: [
-    { label: 'Privacy Policy', href: '#' },
-    { label: 'Terms of Service', href: '#' },
-    { label: 'FAQ', href: '/faq' },
-  ],
-}
-
 export default function Footer() {
+  const year = new Date().getFullYear()
+
   return (
-    <footer className="bg-brand-black text-white" role="contentinfo">
-      {/* Main footer */}
-      <div className="container section-sm">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
-          {/* Brand column */}
-          <div className="lg:col-span-1">
+    <footer style={{ backgroundColor: '#111111', color: '#ffffff', marginTop: 0, padding: 0 }}>
+
+      {/* Yellow top accent line */}
+      <div style={{ height: '3px', background: 'linear-gradient(90deg, transparent, #FFCC35, transparent)' }} />
+
+      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '80px 40px 60px' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '60px', justifyContent: 'space-between' }}>
+
+          {/* Brand */}
+          <div style={{ flex: '1 1 260px', minWidth: '220px', maxWidth: '300px' }}>
             <Image
               src="/logo-white.png"
               alt="Mayura Car Rentals"
-              width={160}
-              height={48}
-              style={{ height: '40px', width: 'auto' }}
-              className="object-contain mb-6"
+              width={140}
+              height={42}
+              style={{ height: '38px', width: 'auto', marginBottom: '24px', display: 'block' }}
             />
-            <p className="text-white/60 text-sm leading-relaxed mb-6">
-              Bengaluru&apos;s integrated corporate mobility company. AI-powered routing, 24/7 command centre, 6 fleet types.
+            <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '14px', lineHeight: '1.8', marginBottom: '28px' }}>
+              Bengaluru&apos;s integrated corporate mobility company — AI-powered routing, 24/7 command centre, multi-fleet solution.
             </p>
-            <div className="space-y-3">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <a
                 href="mailto:contact@mayuracabs.com"
-                className="flex items-center gap-2 text-white/60 hover:text-brand-yellow text-sm transition-colors"
+                style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                  <polyline points="22,6 12,13 2,6"/>
-                </svg>
-                contact@mayuracabs.com
+                <span style={{ color: '#FFCC35' }}>✉</span> contact@mayuracabs.com
               </a>
               <a
                 href="tel:+91XXXXXXXXXX"
-                className="flex items-center gap-2 text-white/60 hover:text-brand-yellow text-sm transition-colors"
+                style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                </svg>
-                +91-XXXXXXXXXX
+                <span style={{ color: '#FFCC35' }}>☎</span> +91-XXXXXXXXXX
               </a>
             </div>
           </div>
 
-          {/* Company links */}
-          <div>
-            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-5">Company</h3>
-            <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-white/60 hover:text-brand-yellow text-sm transition-colors duration-200"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Services links */}
-          <div>
-            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-5">Services</h3>
-            <ul className="space-y-3">
-              {footerLinks.services.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-white/60 hover:text-brand-yellow text-sm transition-colors duration-200"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* CTA column */}
-          <div>
-            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-5">Get Started</h3>
-            <p className="text-white/60 text-sm mb-5 leading-relaxed">
-              Ready to transform your employee transport? Talk to us today.
+          {/* Company */}
+          <div style={{ flex: '1 1 140px', minWidth: '140px' }}>
+            <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.3)', marginBottom: '20px' }}>
+              Company
             </p>
-            <div className="space-y-3">
-              <a
-                href="https://wa.me/91XXXXXXXXXX?text=Hi%20Mayura%2C%20I'm%20interested%20in%20corporate%20transport"
-                target="_blank"
-                rel="noopener noreferrer"
-                id="footer-whatsapp-btn"
-                className="btn-primary text-sm w-full justify-center"
-              >
-                WhatsApp Us Now
-              </a>
-              <Link
-                href="/contact"
-                id="footer-book-call-btn"
-                className="btn-outline text-sm w-full justify-center"
-              >
-                Book a Discovery Call
-              </Link>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+              {[
+                ['About Us', '/about'],
+                ['Our Team', '/team'],
+                ['How We Work', '/how-we-work'],
+                ['Blog', '/blog'],
+                ['Careers', 'mailto:careers@mayuracabs.com'],
+              ].map(([label, href]) => (
+                <Link
+                  key={href}
+                  href={href}
+                  style={{ color: 'rgba(255,255,255,0.55)', fontSize: '14px', textDecoration: 'none' }}
+                >
+                  {label}
+                </Link>
+              ))}
             </div>
           </div>
+
+          {/* Services */}
+          <div style={{ flex: '1 1 180px', minWidth: '180px' }}>
+            <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.3)', marginBottom: '20px' }}>
+              Services
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+              {[
+                ['Employee Commute', '/services#daily-commute'],
+                ['Fixed-Route Shuttle', '/services#shuttle'],
+                ['Corporate Car Rentals', '/services#car-rentals'],
+                ['EV Fleet', '/services#ev-fleet'],
+                ['Commute Platform', '/services#platform'],
+                ['Airport & Outstation', '/services#airport'],
+              ].map(([label, href]) => (
+                <Link
+                  key={href}
+                  href={href}
+                  style={{ color: 'rgba(255,255,255,0.55)', fontSize: '14px', textDecoration: 'none' }}
+                >
+                  {label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div style={{ flex: '1 1 200px', minWidth: '200px', maxWidth: '240px' }}>
+            <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.3)', marginBottom: '20px' }}>
+              Get Started
+            </p>
+            <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '14px', lineHeight: '1.7', marginBottom: '24px' }}>
+              Ready to transform your employee transport? Let&apos;s talk.
+            </p>
+            <Link
+              href="/contact"
+              style={{
+                display: 'block',
+                textAlign: 'center',
+                backgroundColor: '#FFCC35',
+                color: '#111111',
+                fontWeight: 700,
+                fontSize: '14px',
+                padding: '14px 24px',
+                borderRadius: '8px',
+                textDecoration: 'none',
+              }}
+            >
+              Book a Discovery Call
+            </Link>
+          </div>
+
         </div>
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/10">
-        <div className="container py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-white/40 text-xs">
-            © 2026 Mayura Car Rentals LLP. All rights reserved. | CIN: [to be updated] | GST: [to be updated]
+      <div style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
+        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '20px 40px', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '12px' }}>
+          <p style={{ color: 'rgba(255,255,255,0.25)', fontSize: '12px' }}>
+            © {year} Mayura Car Rentals LLP. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
-            {footerLinks.legal.map((link) => (
+          <div style={{ display: 'flex', gap: '24px' }}>
+            {[['Privacy Policy', '#'], ['Terms of Service', '#'], ['FAQ', '/faq']].map(([label, href]) => (
               <Link
-                key={link.label}
-                href={link.href}
-                className="text-white/40 hover:text-white/70 text-xs transition-colors"
+                key={label}
+                href={href}
+                style={{ color: 'rgba(255,255,255,0.25)', fontSize: '12px', textDecoration: 'none' }}
               >
-                {link.label}
+                {label}
               </Link>
             ))}
           </div>
         </div>
       </div>
+
     </footer>
   )
 }

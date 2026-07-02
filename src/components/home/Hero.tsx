@@ -52,13 +52,7 @@ export default function Hero() {
       className="relative min-h-screen bg-brand-black overflow-hidden noise-overlay grid-bg pt-24 lg:pt-28 pb-16 lg:pb-24"
       aria-label="Hero section"
     >
-      {/* Radial yellow glow */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse 60% 60% at 70% 50%, rgba(255,204,53,0.07) 0%, transparent 70%)',
-        }}
-      />
+
 
       {/* Animated background lines */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -105,7 +99,7 @@ export default function Hero() {
                 id="hero-discovery-btn"
                 className="btn-primary text-base px-8 py-3.5"
               >
-                Book a Free Discovery Call
+                Book a Discovery Call
               </Link>
               <a
                 href="https://wa.me/91XXXXXXXXXX?text=Hi%20Mayura%2C%20I'm%20interested%20in%20corporate%20transport%20for%20my%20company"
@@ -162,7 +156,7 @@ export default function Hero() {
               <div
                 className="absolute -bottom-4 left-4 sm:bottom-8 sm:left-8 md:bottom-16 md:left-16 bg-brand-yellow text-brand-black px-4 py-2 rounded-xl shadow-2xl hero-float-delayed"
               >
-                <div className="text-xs font-bold uppercase tracking-wide">Free 7-Day Pilot</div>
+                <div className="text-xs font-bold uppercase tracking-wide">Enterprise Assessment</div>
                 <div className="text-xs font-medium opacity-70">No commitment required</div>
               </div>
               {/* Floating badge - AIS140 */}

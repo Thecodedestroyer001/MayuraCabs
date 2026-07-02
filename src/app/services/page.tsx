@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import FooterCTA from '@/components/shared/FooterCTA'
 import HorizontalGarage from '@/components/services/HorizontalGarage'
 import { Building2, Bus, Handshake, Zap, Smartphone, Plane } from 'lucide-react'
 
@@ -78,7 +77,7 @@ const services = [
     id: 'platform',
     icon: <Smartphone className="w-8 h-8 md:w-10 md:h-10 text-brand-black" />,
     title: 'Commute Platform',
-    tagline: 'Proprietary enterprise mobility software - included free with all Mayura services.',
+    tagline: 'Proprietary enterprise mobility software - included with all Mayura services.',
     features: [
       {
         title: 'Smart Scheduling',
@@ -179,7 +178,7 @@ export default function ServicesPage() {
         <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-brand-black/5 pointer-events-none" />
         <div className="container relative z-10 text-center">
           <h2 className="text-3xl sm:text-4xl font-black text-brand-black mb-4">
-            Request a Fleet Demo or Free 7-Day Pilot
+            Request a Fleet Demo or Enterprise Assessment
           </h2>
           <p className="text-brand-black/70 text-lg mb-8 max-w-xl mx-auto">
             See the Commute platform live and get a customised fleet proposal for your enterprise.
@@ -200,8 +199,6 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
-      <FooterCTA />
     </>
   )
 }

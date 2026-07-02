@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import FooterCTA from '@/components/shared/FooterCTA'
 import TimeTunnel from '@/components/about/TimeTunnel'
 
 export const metadata: Metadata = {
@@ -154,7 +153,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <FooterCTA />
     </>
   )
 }

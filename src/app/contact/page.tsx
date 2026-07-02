@@ -1,5 +1,5 @@
-import FooterCTA from '@/components/shared/FooterCTA'
 import MagneticGlowForm from '@/components/contact/MagneticGlowForm'
+import { Map, RefreshCw, Car, FileText } from 'lucide-react'
 
 const contactOptions = [
   {
@@ -56,18 +56,17 @@ const contactOptions = [
   },
 ]
 
-import { Map, RefreshCw, Car, FileText } from 'lucide-react'
 
 const incentives = [
-  { icon: Map, title: 'Free Transport Audit', desc: 'Full analysis of your current setup, cost, and inefficiencies.' },
-  { icon: RefreshCw, title: 'Free Route Optimisation Analysis', desc: 'AI-powered route design for your employee addresses.' },
-  { icon: Car, title: 'Free 7-Day Pilot', desc: 'Full fleet deployment at zero cost. No commitment required.' },
-  { icon: FileText, title: 'Free SLA Template', desc: 'Our proven transport SLA - adapt it for any vendor you work with.' },
+  { icon: Map, title: 'Transport Audit', desc: 'Full analysis of your current setup, cost, and inefficiencies.' },
+  { icon: RefreshCw, title: 'Route Optimisation Analysis', desc: 'AI-powered route design for your employee addresses.' },
+  { icon: Car, title: 'Enterprise Assessment', desc: 'Full fleet deployment at transparent terms. Contact us for details.' },
+  { icon: FileText, title: 'SLA Template', desc: 'Our proven transport SLA - adapt it for any vendor you work with.' },
 ]
 
 const serviceOptions = [
   'Employee Daily Commute', 'Fixed-Route Shuttle', 'Corporate Car Rentals',
-  'EV Fleet', 'Commute Platform Demo', 'Airport & Outstation', 'Free 7-Day Pilot',
+  'EV Fleet', 'Commute Platform Demo', 'Airport & Outstation', 'Enterprise Assessment',
 ]
 
 const employeeOptions = [
@@ -161,7 +160,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <FooterCTA />
     </>
   )
 }

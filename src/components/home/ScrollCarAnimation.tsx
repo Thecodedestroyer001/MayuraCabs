@@ -12,23 +12,23 @@ export default function ScrollCarAnimation() {
     offset: ["start start", "end end"]
   })
 
-  // Car drives from far left (offscreen) to far right (offscreen)
-  const carX = useTransform(scrollYProgress, [0, 1], ['-100vw', '100vw'])
+  // Car drives from left-ish (just off screen) to right (off screen)
+  const carX = useTransform(scrollYProgress, [0, 1], ['-60vw', '110vw'])
 
-  // Feature 1: 0.1 to 0.4
-  const f1Opacity = useTransform(scrollYProgress, [0.05, 0.15, 0.35, 0.45], [0, 1, 1, 0])
-  const f1Y = useTransform(scrollYProgress, [0.05, 0.15], [50, 0])
+  // Feature 1 — visible from start, fades out cleanly
+  const f1Opacity = useTransform(scrollYProgress, [0.0, 0.18, 0.24], [1, 1, 0])
+  const f1Y = useTransform(scrollYProgress, [0.0, 0.02], [10, 0])
 
-  // Feature 2: 0.4 to 0.7
-  const f2Opacity = useTransform(scrollYProgress, [0.35, 0.45, 0.65, 0.75], [0, 1, 1, 0])
-  const f2Y = useTransform(scrollYProgress, [0.35, 0.45], [50, 0])
+  // Feature 2 — starts AFTER F1 is fully gone
+  const f2Opacity = useTransform(scrollYProgress, [0.30, 0.38, 0.55, 0.62], [0, 1, 1, 0])
+  const f2Y = useTransform(scrollYProgress, [0.30, 0.38], [20, 0])
 
-  // Feature 3: 0.7 to 1.0
-  const f3Opacity = useTransform(scrollYProgress, [0.65, 0.75, 0.95, 1], [0, 1, 1, 0])
-  const f3Y = useTransform(scrollYProgress, [0.65, 0.75], [50, 0])
+  // Feature 3 — starts AFTER F2 is fully gone
+  const f3Opacity = useTransform(scrollYProgress, [0.68, 0.76, 0.92, 1.0], [0, 1, 1, 0])
+  const f3Y = useTransform(scrollYProgress, [0.68, 0.76], [20, 0])
 
   return (
-    <section ref={containerRef} className="relative h-[400vh] bg-brand-black" aria-label="Animated features">
+    <section ref={containerRef} className="relative h-[300vh] bg-brand-black isolate" aria-label="Animated features">
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
         
         {/* Background Subtle Elements */}
@@ -39,7 +39,7 @@ export default function ScrollCarAnimation() {
         <div className="absolute inset-0 flex flex-col items-center justify-start pt-32 md:pt-48 z-20 pointer-events-none">
           
           <motion.div 
-            style={{ opacity: f1Opacity, y: f1Y }}
+            style={{ opacity: f1Opacity, y: f1Y, visibility: useTransform(f1Opacity, o => o < 0.01 ? 'hidden' : 'visible') }}
             className="absolute top-20 md:top-32 lg:top-40 max-w-2xl text-center px-4"
           >
             <h3 className="text-4xl md:text-6xl font-extrabold text-brand-yellow mb-6">AI-Powered Routing</h3>
@@ -47,7 +47,7 @@ export default function ScrollCarAnimation() {
           </motion.div>
 
           <motion.div 
-            style={{ opacity: f2Opacity, y: f2Y }}
+            style={{ opacity: f2Opacity, y: f2Y, visibility: useTransform(f2Opacity, o => o < 0.01 ? 'hidden' : 'visible') }}
             className="absolute top-20 md:top-32 lg:top-40 max-w-2xl text-center px-4"
           >
             <h3 className="text-4xl md:text-6xl font-extrabold text-brand-yellow mb-6">24/7 Command Centre</h3>
@@ -55,7 +55,7 @@ export default function ScrollCarAnimation() {
           </motion.div>
 
           <motion.div 
-            style={{ opacity: f3Opacity, y: f3Y }}
+            style={{ opacity: f3Opacity, y: f3Y, visibility: useTransform(f3Opacity, o => o < 0.01 ? 'hidden' : 'visible') }}
             className="absolute top-20 md:top-32 lg:top-40 max-w-2xl text-center px-4"
           >
             <h3 className="text-4xl md:text-6xl font-extrabold text-brand-yellow mb-6">EV-Ready Fleet</h3>

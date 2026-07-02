@@ -46,16 +46,10 @@ const industries = [
 export default function IndustriesSection() {
   return (
     <section
-      className="section bg-brand-black noise-overlay"
+      className="section pb-32 bg-brand-black noise-overlay"
       aria-labelledby="industries-heading"
     >
-      {/* Radial glow */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse 80% 50% at 50% 50%, rgba(255,204,53,0.05) 0%, transparent 70%)',
-        }}
-      />
+
 
       <div className="container relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -94,12 +88,11 @@ export default function IndustriesSection() {
         </div>
 
         {/* Bottom stat bar */}
-        <div className="reveal mt-14 grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-white/10">
+        <div className="reveal mt-14 grid grid-cols-1 sm:grid-cols-3 gap-6 pt-10 border-t border-white/10">
           {[
             { num: '8+', label: 'Industries Served' },
             { num: '500+', label: 'Vehicles Deployed' },
             { num: '50K+', label: 'Employee Trips / Month' },
-            { num: '99.2%', label: 'On-Time Rate' },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-4xl font-black" style={{ color: '#FFCC35' }}>{stat.num}</div>
@@ -108,6 +101,9 @@ export default function IndustriesSection() {
           ))}
         </div>
       </div>
+
+      {/* Footer divider */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-yellow/40 to-transparent" />
     </section>
   )
 }

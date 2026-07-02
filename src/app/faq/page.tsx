@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import FooterCTA from '@/components/shared/FooterCTA'
 
 const faqCategories = [
   {
@@ -66,7 +65,7 @@ const faqCategories = [
       },
       {
         q: 'What is the minimum contract period?',
-        a: 'Our standard contracts are 12 months, reflecting the investment we make in route design, fleet deployment, and staff training. We offer a free 7-day pilot before any contract commitment.',
+        a: 'Our standard contracts are 12 months, reflecting the investment we make in route design, fleet deployment, and staff training. We offer a comprehensive enterprise assessment before any contract commitment.',
       },
       {
         q: 'Do you offer SLA guarantees with penalty clauses?',
@@ -155,7 +154,6 @@ export default function FAQPage() {
         </div>
       </section>
 
-      <FooterCTA />
     </>
   )
 }

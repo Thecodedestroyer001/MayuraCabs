@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import FooterCTA from '@/components/shared/FooterCTA'
 
 export const metadata: Metadata = {
   title: 'Article',
@@ -32,19 +31,18 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
       <section className="section-sm bg-brand-yellow">
         <div className="container text-center max-w-xl mx-auto">
           <h2 className="text-2xl font-black text-brand-black mb-4">Get Notified When This Article Goes Live</h2>
-          <form onSubmit={(e) => e.preventDefault()} className="flex gap-3 max-w-md mx-auto">
+          <form className="flex gap-3 max-w-md mx-auto">
             <input
               type="email"
               placeholder="Your work email"
               className="flex-1 border border-brand-black/20 rounded-lg px-4 py-3 text-sm bg-white focus:outline-none"
             />
-            <button type="submit" className="bg-brand-black text-white font-bold px-6 py-3 rounded-lg text-sm hover:opacity-90 transition-opacity">
+            <button type="button" className="bg-brand-black text-white font-bold px-6 py-3 rounded-lg text-sm hover:opacity-90 transition-opacity">
               Notify Me
             </button>
           </form>
         </div>
       </section>
-      <FooterCTA />
     </>
   )
 }

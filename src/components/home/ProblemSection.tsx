@@ -65,7 +65,7 @@ export default function ProblemSection() {
             Than It Should?
           </h2>
           <p className="reveal text-brand-gray-500 text-lg mt-6 leading-relaxed">
-            Most Bengaluru enterprises are losing money, time, and employee trust on broken transport programmes.
+            Most corporates across India are losing money, time, and employee trust on broken transport programmes.
           </p>
         </div>
 
@@ -90,7 +90,7 @@ export default function ProblemSection() {
         <div className="reveal mt-14 text-center max-w-2xl mx-auto">
           <div className="bg-brand-gray-100 rounded-2xl p-8 border border-gray-200">
             <p className="text-brand-black text-xl font-bold italic leading-relaxed">
-              &ldquo;If you manage transport for 200+ employees, you deserve a partner who treats it like a
+              &ldquo;If you provide transport for your employees, you deserve a partner who treats it like a
               mission-critical operation - not an afterthought.&rdquo;
             </p>
           </div>

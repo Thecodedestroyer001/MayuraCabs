@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import FooterCTA from '@/components/shared/FooterCTA'
 import DynamicRouteTimeline from '@/components/how-we-work/DynamicRouteTimeline'
 
 export const metadata: Metadata = {
@@ -19,7 +18,7 @@ const steps = [
       'Map your current transport challenges and costs',
       'Identify priority pain points to solve first',
       'Walk you through the Commute platform (20-min demo)',
-      'Discuss the free 7-day pilot structure',
+      'Discuss the enterprise assessment structure',
     ],
     cta: true,
   },
@@ -39,11 +38,11 @@ const steps = [
   },
   {
     number: '03',
-    title: 'Free 7-Day Pilot',
+    title: 'Enterprise Assessment',
     timeline: 'Week 2',
     color: '#FFCC35',
     what: [
-      'Full fleet deployment - zero cost to you',
+      'Full fleet deployment - transparent pricing',
       'Your admin team gets live Commute dashboard access',
       'Employees receive trip alerts and driver details',
       '24/7 command centre monitoring throughout',
@@ -135,7 +134,6 @@ export default function HowWeWorkPage() {
         </div>
       </section>
 
-      <FooterCTA />
     </>
   )
 }
