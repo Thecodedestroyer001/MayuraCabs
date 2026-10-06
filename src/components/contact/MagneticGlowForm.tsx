@@ -73,7 +73,7 @@ export default function MagneticGlowForm({
       {/* The Form Container (relative to sit above glow) */}
       <div className="relative z-10 bg-white/80 backdrop-blur-3xl rounded-[23px] p-8 md:p-10 border border-white">
         <h2 className="text-2xl font-black text-brand-black mb-2">Tell Us About Your Requirements</h2>
-        <p className="text-brand-gray-500 text-sm mb-8">We&apos;ll respond within 2 business hours with a customised proposal.</p>
+        <p className="text-brand-gray-500 text-sm mb-8">We&apos;ll respond with a customised proposal.</p>
 
         {submitted ? (
           <motion.div 
@@ -83,7 +83,7 @@ export default function MagneticGlowForm({
           >
             <div className="text-4xl mb-4">✅</div>
             <h3 className="text-xl font-black text-brand-black mb-2">Thank You!</h3>
-            <p className="text-brand-gray-500">Our team will contact you within 2 business hours.</p>
+            <p className="text-brand-gray-500">Our team will contact you soon.</p>
           </motion.div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-6">

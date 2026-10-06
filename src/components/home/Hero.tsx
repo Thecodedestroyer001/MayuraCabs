@@ -13,9 +13,9 @@ export default function Hero() {
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const fleetImages = [
-    '/sedan-transparent.png',
-    '/van-transparent.png',
-    '/bus-transparent.png'
+    '/sedan-yellow-top.png',
+    '/van-yellow-top.png',
+    '/bus-yellow-top.png'
   ]
 
   useEffect(() => {

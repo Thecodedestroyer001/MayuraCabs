@@ -135,7 +135,7 @@ export default function FAQPage() {
             Have a Question Not Listed Here?
           </h2>
           <p className="reveal text-white/60 mb-8">
-            Our team responds within 2 business hours on WhatsApp.
+            Our team responds on WhatsApp.
           </p>
           <div className="reveal flex flex-col sm:flex-row gap-4 justify-center">
             <a

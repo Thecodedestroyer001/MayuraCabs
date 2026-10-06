@@ -10,7 +10,7 @@ const contactOptions = [
     ),
     title: 'WhatsApp Us',
     value: '+91-XXXXXXXXXX',
-    sub: 'Typical response: under 2 hours',
+    sub: 'Message us on WhatsApp',
     href: 'https://wa.me/91XXXXXXXXXX',
     id: 'contact-wa',
   },
@@ -86,8 +86,8 @@ export default function ContactPage() {
             <span style={{ color: '#FFCC35' }}>Transport Requirements</span>
           </h1>
           <p className="text-white/70 text-xl leading-relaxed">
-            Fill in the form below and our team will contact you within 2 business hours with a
-            customised proposal for your enterprise.
+            Fill in the form below and our team will contact you with a customised proposal for
+            your enterprise.
           </p>
         </div>
       </section>

@@ -1,7 +1,6 @@
 import { Car, CarFront, Bus, BusFront, Zap, MapPin, Calendar, LineChart, CreditCard, Smartphone, AlertTriangle } from 'lucide-react'
 
 const fleetTypes = [
-  { icon: Car, name: 'Hatchbacks', desc: 'Alto, Swift, i20 - 4-seater comfort' },
   { icon: CarFront, name: 'Sedans', desc: 'Dzire, Amaze - Executive daily commute' },
   { icon: Car, name: 'Premium / Luxury', desc: 'For Senior Leadership travel' },
   { icon: Car, name: 'SUVs', desc: 'Ertiga, Innova - 6–7 seater pool rides' },
@@ -44,7 +43,9 @@ export default function SolutionSection() {
           <div className="reveal-left bg-white rounded-3xl p-8 shadow-xl border border-gray-100 relative overflow-hidden">
 
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 rounded-xl bg-brand-yellow/10 flex items-center justify-center text-xl">🚗</div>
+              <div className="w-10 h-10 rounded-xl bg-brand-yellow/10 flex items-center justify-center text-brand-black">
+                <CarFront className="w-5 h-5" aria-hidden="true" />
+              </div>
               <div>
                 <h3 className="font-black text-brand-black text-lg">Fleet Mix</h3>
               </div>
@@ -73,7 +74,9 @@ export default function SolutionSection() {
           {/* Platform column */}
           <div className="reveal-right bg-brand-black rounded-3xl p-8 shadow-xl">
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 rounded-xl bg-brand-yellow/20 flex items-center justify-center text-xl">⚡</div>
+              <div className="w-10 h-10 rounded-xl bg-brand-yellow/20 flex items-center justify-center text-brand-yellow">
+                <Zap className="w-5 h-5" aria-hidden="true" />
+              </div>
               <div>
                 <h3 className="font-black text-white text-lg">Commute Platform</h3>
                 <p className="text-white/50 text-sm">Proprietary tech built for enterprise ops</p>
