@@ -2,6 +2,7 @@
 import { useEffect } from 'react'
 import Hero from '@/components/home/Hero'
 import TrustBar from '@/components/home/TrustBar'
+import ClientLogoBelt from '@/components/home/ClientLogoBelt'
 import ProblemSection from '@/components/home/ProblemSection'
 import SolutionSection from '@/components/home/SolutionSection'
 import ServicesOverview from '@/components/home/ServicesOverview'
@@ -32,6 +33,7 @@ export default function HomePage() {
       <Hero />
       <ScrollCarAnimation />
       <TrustBar />
+      <ClientLogoBelt />
       <ProblemSection />
       <SolutionSection />
       <ServicesOverview />
