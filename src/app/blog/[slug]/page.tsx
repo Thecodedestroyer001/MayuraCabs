@@ -6,7 +6,22 @@ export const metadata: Metadata = {
   description: 'Expert insights on corporate employee transport for Bengaluru enterprises.',
 }
 
-export default function BlogArticlePage({ params }: { params: { slug: string } }) {
+const articleSlugs = [
+  'complete-guide-employee-transport',
+  'commute-quality-productivity-retention',
+  'ev-vs-petrol-fleet-admin-guide',
+  'corporate-transport-sla-guide',
+  'corporate-transport-technology-2025',
+  'transport-contract-questions-checklist',
+]
+
+export function generateStaticParams() {
+  return articleSlugs.map((slug) => ({ slug }))
+}
+
+export const dynamicParams = false
+
+export default function BlogArticlePage() {
   return (
     <>
       <section className="bg-brand-black pt-32 pb-20 noise-overlay">
