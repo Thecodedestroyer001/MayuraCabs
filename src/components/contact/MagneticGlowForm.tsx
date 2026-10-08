@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
+import { supabase } from '@/lib/supabase'
 
 export default function MagneticGlowForm({ 
   serviceOptions, 
@@ -11,6 +12,8 @@ export default function MagneticGlowForm({
   employeeOptions: string[] 
 }) {
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState('')
   const [form, setForm] = useState({
     name: '', company: '', designation: '', phone: '', location: '',
     services: [] as string[], employees: '', details: '',
@@ -41,8 +44,28 @@ export default function MagneticGlowForm({
     mouseY.set(rect.height / 2)
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+
+    setSubmitting(true)
+    setError('')
+
+    const { error: submitError } = await supabase.from('enquiries').insert({
+      name: form.name,
+      company: form.company,
+      designation: form.designation,
+      phone: form.phone,
+      location: form.location,
+      services: form.services,
+      employees: form.employees || null,
+      details: form.details.trim() || null,
+    })
+
+    if (submitError) {
+      setError('We could not save your enquiry. Please try again or contact us on WhatsApp.')
+      setSubmitting(false)
+      return
+    }
 
     const message = [
       'Hi, I would like to get in touch.',
@@ -56,8 +79,9 @@ export default function MagneticGlowForm({
       `Details: ${form.details.trim() || 'Not specified'}`,
     ].join('\n')
 
-    window.location.href = `https://wa.me/919686180808?text=${encodeURIComponent(message)}`
     setSubmitted(true)
+    setSubmitting(false)
+    window.open(`https://wa.me/919686180808?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer')
   }
 
   const toggleService = (s: string) => {
@@ -216,14 +240,16 @@ export default function MagneticGlowForm({
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               type="submit"
+              disabled={submitting}
               className="w-full bg-brand-black text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-black transition-colors shadow-xl"
             >
-              Get My Transport Consultation
+              {submitting ? 'Submitting...' : 'Get My Transport Consultation'}
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <line x1="5" y1="12" x2="19" y2="12"/>
                 <polyline points="12 5 19 12 12 19"/>
               </svg>
             </motion.button>
+            {error && <p className="text-sm font-semibold text-red-600" role="alert">{error}</p>}
           </form>
         )}
       </div>
