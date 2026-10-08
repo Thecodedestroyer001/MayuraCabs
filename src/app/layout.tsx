@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { Figtree } from 'next/font/google'
-import Navbar from '@/components/layout/Navbar'
-import Footer from '@/components/layout/Footer'
 import { ScrollRevealProvider } from '@/components/shared/ScrollRevealProvider'
+import { SiteContentProvider } from '@/components/shared/SiteContentProvider'
+import SiteChrome from '@/components/layout/SiteChrome'
 import './globals.css'
 
 const figtree = Figtree({
@@ -55,9 +55,9 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased">
         <ScrollRevealProvider>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <SiteContentProvider>
+          <SiteChrome>{children}</SiteChrome>
+        </SiteContentProvider>
         <a
           href="https://wa.me/91XXXXXXXXXX?text=Hi%20Mayura%2C%20I'm%20interested%20in%20corporate%20transport%20for%20my%20company"
           target="_blank"

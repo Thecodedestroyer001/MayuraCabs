@@ -1,8 +1,14 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { useSiteContent } from '@/components/shared/SiteContentProvider'
 
 export default function Footer() {
   const year = new Date().getFullYear()
+  const description = useSiteContent('global.footer_description', "Bengaluru's integrated corporate mobility company — AI-powered routing, 24/7 command centre, multi-fleet solution.")
+  const email = useSiteContent('global.email', 'contact@mayuracabs.com')
+  const phone = useSiteContent('global.phone', '+91-9686180808')
 
   return (
     <footer style={{ backgroundColor: '#111111', color: '#ffffff', marginTop: 0, padding: 0 }}>
@@ -23,20 +29,20 @@ export default function Footer() {
               style={{ height: '38px', width: 'auto', marginBottom: '24px', display: 'block' }}
             />
             <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '14px', lineHeight: '1.8', marginBottom: '28px' }}>
-              Bengaluru&apos;s integrated corporate mobility company — AI-powered routing, 24/7 command centre, multi-fleet solution.
+              {description}
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <a
-                href="mailto:contact@mayuracabs.com"
+                href={`mailto:${email}`}
                 style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}
               >
-                <span style={{ color: '#FFCC35' }}>✉</span> contact@mayuracabs.com
+                <span style={{ color: '#FFCC35' }}>✉</span> {email}
               </a>
               <a
-                href="tel:+91XXXXXXXXXX"
+                href={`tel:${phone.replace(/\s/g, '')}`}
                 style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}
               >
-                <span style={{ color: '#FFCC35' }}>☎</span> +91-XXXXXXXXXX
+                <span style={{ color: '#FFCC35' }}>☎</span> {phone}
               </a>
             </div>
           </div>

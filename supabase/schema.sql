@@ -21,6 +21,60 @@ create table if not exists public.admin_users (
 
 alter table public.admin_users enable row level security;
 
+create or replace function public.is_admin()
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select exists (
+    select 1 from public.admin_users where user_id = auth.uid()
+  );
+$$;
+
+revoke all on function public.is_admin() from public;
+grant execute on function public.is_admin() to authenticated;
+
+create table if not exists public.site_content (
+  key text primary key,
+  page text not null,
+  label text not null,
+  value text not null default '',
+  input_type text not null default 'text' check (input_type in ('text', 'textarea', 'url', 'email', 'tel')),
+  updated_at timestamptz not null default now()
+);
+
+alter table public.site_content enable row level security;
+
+insert into public.site_content (key, page, label, value, input_type) values
+  ('global.email', 'Global settings', 'Contact email', 'contact@mayuracabs.com', 'email'),
+  ('global.phone', 'Global settings', 'Phone number', '+91-9686180808', 'tel'),
+  ('global.whatsapp', 'Global settings', 'WhatsApp number (country code included)', '919686180808', 'tel'),
+  ('global.footer_description', 'Global settings', 'Footer description', 'Bengaluru''s integrated corporate mobility company — AI-powered routing, 24/7 command centre, multi-fleet solution.', 'textarea'),
+  ('home.hero_title', 'Home page', 'Hero heading', 'Corporate Employee Transport.', 'text'),
+  ('home.hero_description', 'Home page', 'Hero description', 'AI-powered, reliable corporate mobility for Bengaluru''s top enterprises. Zero operational headaches — guaranteed.', 'textarea'),
+  ('home.primary_cta', 'Home page', 'Primary button label', 'Book a Discovery Call', 'text'),
+  ('home.secondary_cta', 'Home page', 'WhatsApp button label', 'WhatsApp Us', 'text'),
+  ('home.badge_title', 'Home page', 'Vehicle badge title', 'Enterprise Assessment', 'text'),
+  ('home.badge_subtitle', 'Home page', 'Vehicle badge subtitle', 'No commitment required', 'text'),
+  ('contact.hero_title', 'Contact page', 'Contact heading', 'Let''s Talk About Your Transport Requirements', 'text'),
+  ('contact.hero_description', 'Contact page', 'Contact description', 'Fill in the form below and our team will contact you with a customised proposal for your enterprise.', 'textarea')
+on conflict (key) do nothing;
+
+drop policy if exists "Anyone can read site content" on public.site_content;
+create policy "Anyone can read site content"
+on public.site_content for select
+to anon, authenticated
+using (true);
+
+drop policy if exists "Admins can update site content" on public.site_content;
+create policy "Admins can update site content"
+on public.site_content for update
+to authenticated
+using (public.is_admin())
+with check (public.is_admin());
+
 drop policy if exists "Anyone can submit an enquiry" on public.enquiries;
 create policy "Anyone can submit an enquiry"
 on public.enquiries for insert
@@ -31,29 +85,14 @@ drop policy if exists "Authenticated staff can read enquiries" on public.enquiri
 create policy "Authenticated staff can read enquiries"
 on public.enquiries for select
 to authenticated
-using (
-  exists (
-    select 1 from public.admin_users
-    where admin_users.user_id = auth.uid()
-  )
-);
+using (public.is_admin());
 
 drop policy if exists "Authenticated staff can update enquiries" on public.enquiries;
 create policy "Authenticated staff can update enquiries"
 on public.enquiries for update
 to authenticated
-using (
-  exists (
-    select 1 from public.admin_users
-    where admin_users.user_id = auth.uid()
-  )
-)
-with check (
-  exists (
-    select 1 from public.admin_users
-    where admin_users.user_id = auth.uid()
-  )
-);
+using (public.is_admin())
+with check (public.is_admin());
 
 create index if not exists enquiries_created_at_idx
 on public.enquiries (created_at desc);

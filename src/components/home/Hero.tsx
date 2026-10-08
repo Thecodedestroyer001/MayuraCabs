@@ -3,8 +3,16 @@ import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useSiteContent } from '@/components/shared/SiteContentProvider'
 
 export default function Hero() {
+  const heroTitle = useSiteContent('home.hero_title', 'Corporate Employee Transport.')
+  const heroDescription = useSiteContent('home.hero_description', "AI-powered, reliable corporate mobility for Bengaluru's top enterprises. Zero operational headaches — guaranteed.")
+  const primaryCta = useSiteContent('home.primary_cta', 'Book a Discovery Call')
+  const secondaryCta = useSiteContent('home.secondary_cta', 'WhatsApp Us')
+  const badgeTitle = useSiteContent('home.badge_title', 'Enterprise Assessment')
+  const badgeSubtitle = useSiteContent('home.badge_subtitle', 'No commitment required')
+  const whatsapp = useSiteContent('global.whatsapp', '919686180808')
   const headlineRef = useRef<HTMLHeadingElement>(null)
   const subRef = useRef<HTMLParagraphElement>(null)
   const carRef = useRef<HTMLDivElement>(null)
@@ -79,17 +87,14 @@ export default function Hero() {
               className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-black leading-[1.05] text-white mb-6"
               style={{ textWrap: 'balance' }}
             >
-              Corporate Employee
-              <br />
-              <span className="text-gradient-yellow">Transport.</span>
+              <span className="text-gradient-yellow">{heroTitle}</span>
             </h1>
 
             <p
               ref={subRef}
               className="text-white/70 text-lg leading-relaxed mb-8 max-w-md"
             >
-              AI-powered, reliable corporate mobility for Bengaluru&apos;s top enterprises. 
-              Zero operational headaches - guaranteed.
+              {heroDescription}
             </p>
 
             {/* CTAs */}
@@ -99,10 +104,10 @@ export default function Hero() {
                 id="hero-discovery-btn"
                 className="btn-primary text-base px-8 py-3.5"
               >
-                Book a Discovery Call
+                {primaryCta}
               </Link>
               <a
-                href="https://wa.me/91XXXXXXXXXX?text=Hi%20Mayura%2C%20I'm%20interested%20in%20corporate%20transport%20for%20my%20company"
+                href={`https://wa.me/${whatsapp}?text=Hi%20Mayura%2C%20I'm%20interested%20in%20corporate%20transport%20for%20my%20company`}
                 target="_blank"
                 rel="noopener noreferrer"
                 id="hero-whatsapp-btn"
@@ -111,7 +116,7 @@ export default function Hero() {
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="mr-2 inline-block">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
                 </svg>
-                WhatsApp Us
+                {secondaryCta}
               </a>
             </div>
 
@@ -156,8 +161,8 @@ export default function Hero() {
               <div
                 className="absolute -bottom-4 left-4 sm:bottom-8 sm:left-8 md:bottom-16 md:left-16 bg-brand-yellow text-brand-black px-4 py-2 rounded-xl shadow-2xl hero-float-delayed"
               >
-                <div className="text-xs font-bold uppercase tracking-wide">Enterprise Assessment</div>
-                <div className="text-xs font-medium opacity-70">No commitment required</div>
+                <div className="text-xs font-bold uppercase tracking-wide">{badgeTitle}</div>
+                <div className="text-xs font-medium opacity-70">{badgeSubtitle}</div>
               </div>
               {/* Floating badge - AIS140 */}
               <div
