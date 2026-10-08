@@ -43,7 +43,20 @@ export default function MagneticGlowForm({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form submitted:', form)
+
+    const message = [
+      'Hi, I would like to get in touch.',
+      `Name: ${form.name}`,
+      `Company: ${form.company}`,
+      `Designation: ${form.designation}`,
+      `Phone: ${form.phone}`,
+      `Location: ${form.location}`,
+      `Service: ${form.services.join(', ') || 'Not specified'}`,
+      `Employees: ${form.employees || 'Not specified'}`,
+      `Details: ${form.details.trim() || 'Not specified'}`,
+    ].join('\n')
+
+    window.location.href = `https://wa.me/919686180808?text=${encodeURIComponent(message)}`
     setSubmitted(true)
   }
 
