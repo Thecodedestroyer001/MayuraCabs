@@ -89,10 +89,10 @@ export default function ContactPage() {
       <section className="bg-brand-black pt-32 pb-20 noise-overlay">
         <div className="container max-w-3xl">
           <span className="section-tag mb-6 block w-fit">Contact Us</span>
-          <h1 className="text-4xl sm:text-5xl font-black text-white leading-tight mb-6">
+          <h1 data-content-key="contact.hero_title" className="text-4xl sm:text-5xl font-black text-white leading-tight mb-6">
             <span style={{ color: '#FFCC35' }}>{heroTitle}</span>
           </h1>
-          <p className="text-white/70 text-xl leading-relaxed">
+          <p data-content-key="contact.hero_description" className="text-white/70 text-xl leading-relaxed">
             {heroDescription}
           </p>
         </div>

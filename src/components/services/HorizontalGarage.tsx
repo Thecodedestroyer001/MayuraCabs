@@ -37,6 +37,10 @@ export default function HorizontalGarage({ services }: { services: any[] }) {
       if (index !== -1 && trackRef.current) {
         const cardElement = document.getElementById(hash)
         if (!cardElement) return
+        if (window.matchMedia('(max-width: 767px)').matches) {
+          cardElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          return
+        }
 
         // 1. Calculate how many pixels the track needs to translate to center this card
         const cardLeft = cardElement.offsetLeft
@@ -109,7 +113,7 @@ export default function HorizontalGarage({ services }: { services: any[] }) {
           <p className="text-white/50 mt-2">Scroll down to navigate through our fleet and mobility solutions.</p>
         </div>
 
-        <motion.div ref={trackRef} style={{ x }} className="flex gap-6 md:gap-10 px-6 md:px-8 max-w-max items-stretch h-max my-auto">
+        <motion.div ref={trackRef} style={{ x }} className="garage-track flex gap-6 md:gap-10 px-6 md:px-8 max-w-max items-stretch h-max my-auto">
           {services.map((service) => (
             <div 
               key={service.id}

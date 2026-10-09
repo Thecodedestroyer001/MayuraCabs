@@ -11,7 +11,7 @@ export default function Footer() {
   const phone = useSiteContent('global.phone', '+91-9686180808')
 
   return (
-    <footer style={{ backgroundColor: '#111111', color: '#ffffff', marginTop: 0, padding: 0 }}>
+    <footer className="site-footer" style={{ backgroundColor: '#111111', color: '#ffffff', marginTop: 0, padding: 0 }}>
 
       {/* Yellow top accent line */}
       <div style={{ height: '3px', background: 'linear-gradient(90deg, transparent, #FFCC35, transparent)' }} />
@@ -28,17 +28,19 @@ export default function Footer() {
               height={42}
               style={{ height: '38px', width: 'auto', marginBottom: '24px', display: 'block' }}
             />
-            <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '14px', lineHeight: '1.8', marginBottom: '28px' }}>
+            <p data-content-key="global.footer_description" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '14px', lineHeight: '1.8', marginBottom: '28px' }}>
               {description}
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <a
+                data-content-key="global.email"
                 href={`mailto:${email}`}
                 style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}
               >
                 <span style={{ color: '#FFCC35' }}>✉</span> {email}
               </a>
               <a
+                data-content-key="global.phone"
                 href={`tel:${phone.replace(/\s/g, '')}`}
                 style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}
               >

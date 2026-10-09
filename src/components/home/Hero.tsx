@@ -83,6 +83,7 @@ export default function Hero() {
           {/* Left: Text */}
           <div className="order-2 lg:order-1">
             <h1
+              data-content-key="home.hero_title"
               ref={headlineRef}
               className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-black leading-[1.05] text-white mb-6"
               style={{ textWrap: 'balance' }}
@@ -91,6 +92,7 @@ export default function Hero() {
             </h1>
 
             <p
+              data-content-key="home.hero_description"
               ref={subRef}
               className="text-white/70 text-lg leading-relaxed mb-8 max-w-md"
             >
@@ -100,6 +102,7 @@ export default function Hero() {
             {/* CTAs */}
             <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 mb-12">
               <Link
+                data-content-key="home.primary_cta"
                 href="/contact"
                 id="hero-discovery-btn"
                 className="btn-primary text-base px-8 py-3.5"
@@ -107,6 +110,7 @@ export default function Hero() {
                 {primaryCta}
               </Link>
               <a
+                data-content-key="home.secondary_cta"
                 href={`https://wa.me/${whatsapp}?text=Hi%20Mayura%2C%20I'm%20interested%20in%20corporate%20transport%20for%20my%20company`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -161,8 +165,8 @@ export default function Hero() {
               <div
                 className="absolute -bottom-4 left-4 sm:bottom-8 sm:left-8 md:bottom-16 md:left-16 bg-brand-yellow text-brand-black px-4 py-2 rounded-xl shadow-2xl hero-float-delayed"
               >
-                <div className="text-xs font-bold uppercase tracking-wide">{badgeTitle}</div>
-                <div className="text-xs font-medium opacity-70">{badgeSubtitle}</div>
+                <div data-content-key="home.badge_title" className="text-xs font-bold uppercase tracking-wide">{badgeTitle}</div>
+                <div data-content-key="home.badge_subtitle" className="text-xs font-medium opacity-70">{badgeSubtitle}</div>
               </div>
               {/* Floating badge - AIS140 */}
               <div

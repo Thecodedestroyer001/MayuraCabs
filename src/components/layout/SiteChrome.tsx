@@ -11,7 +11,9 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
   useEffect(() => {
     const button = document.querySelector<HTMLElement>('.floating-wa')
     if (button) button.style.setProperty('display', isAdmin ? 'none' : '')
-    return () => button?.style.removeProperty('display')
+    return () => {
+      button?.style.removeProperty('display')
+    }
   }, [isAdmin])
 
   if (isAdmin) return <main>{children}</main>
@@ -19,7 +21,7 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
   return (
     <>
       <Navbar />
-      <main>{children}</main>
+      <main className="public-site">{children}</main>
       <Footer />
     </>
   )

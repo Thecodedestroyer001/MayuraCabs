@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import TimeTunnel from '@/components/about/TimeTunnel'
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -39,8 +38,8 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-brand-black pt-32 pb-20 noise-overlay">
-        <div className="container">
+      <section className="relative overflow-hidden bg-brand-black pt-28 pb-16 lg:pt-40 lg:pb-24 noise-overlay">
+        <div className="container grid items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
           <div className="max-w-3xl">
             <span className="section-tag mb-6 block w-fit">About Mayura</span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
@@ -52,12 +51,32 @@ export default function AboutPage() {
               We started Mayura because we experienced the chaos of broken corporate transport first-hand.
               Today we&apos;re on a mission to make enterprise mobility seamless, safe, and sustainable.
             </p>
+            <Link href="/contact" className="btn-primary mt-8">Meet your mobility partner <span aria-hidden="true">↗</span></Link>
+          </div>
+          <div className="relative">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[28px] border border-white/10">
+              <Image src="/images/premium_ev_fleet.png" alt="Mayura corporate fleet" fill priority sizes="(max-width: 1024px) 100vw, 45vw" className="object-cover" />
+            </div>
+            <div className="relative -mt-8 ml-6 rounded-2xl bg-brand-yellow p-6 shadow-xl sm:ml-12">
+              <p className="text-xs font-bold uppercase tracking-[.2em]">Rooted in Bengaluru</p>
+              <p className="mt-2 text-2xl font-black">People first. Every journey.</p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Interactive Time Tunnel */}
-      <TimeTunnel timeline={storyTimeline} />
+      <section className="section bg-white">
+        <div className="container">
+          <div className="mb-10 grid gap-5 md:grid-cols-2 md:items-end">
+            <div><span className="section-tag-dark mb-4 inline-block">Our journey</span><h2 className="text-3xl font-black tracking-tight sm:text-4xl">A better commute.<br />Built from experience.</h2></div>
+            <p className="max-w-lg text-base leading-relaxed text-brand-gray-500">From a simple belief to an integrated mobility partner. Our story moves with the city we call home.</p>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {storyTimeline.map((item, index) => <article key={item.year} className="relative rounded-2xl border border-black/10 bg-brand-gray-100 p-6"><span className="text-xs font-bold text-black/35">0{index + 1}</span><h3 className="mt-5 mb-4 text-4xl font-black tracking-tight">{item.year}</h3><div className="mb-5 h-1 w-10 rounded bg-brand-yellow" /><p className="text-sm leading-7 text-brand-gray-500">{item.text}</p></article>)}
+          </div>
+        </div>
+      </section>
 
       {/* Mission & Vision */}
       <section className="section bg-brand-gray-100">
@@ -67,7 +86,7 @@ export default function AboutPage() {
               <div className="h-64 w-full relative">
                 <Image src="/images/command_center.png" alt="Mayura Command Center" fill className="object-cover" />
               </div>
-              <div className="p-10 flex-1">
+              <div className="p-6 sm:p-10 flex-1">
                 <div className="w-12 h-1 bg-brand-yellow rounded mb-6" />
                 <h2 className="text-3xl font-black text-white mb-4">Our Mission</h2>
                 <p className="text-white/70 text-lg leading-relaxed">
@@ -81,7 +100,7 @@ export default function AboutPage() {
               <div className="h-64 w-full relative">
                 <Image src="/images/premium_ev_fleet.png" alt="Mayura Premium EV Fleet" fill className="object-cover" />
               </div>
-              <div className="p-10 flex-1">
+              <div className="p-6 sm:p-10 flex-1">
                 <div className="w-12 h-1 bg-brand-black rounded mb-6" />
                 <h2 className="text-3xl font-black text-brand-black mb-4">Our Vision</h2>
                 <p className="text-brand-black/70 text-lg leading-relaxed">
@@ -103,7 +122,7 @@ export default function AboutPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {values.map((v) => (
-              <div key={v.title} className="card-hover bg-brand-gray-100 rounded-2xl p-7">
+              <div key={v.title} className="card-hover border border-black/5 bg-brand-gray-100 rounded-2xl p-7">
                 <div className="mb-4 text-brand-black">
                   <v.icon className="w-8 h-8" />
                 </div>
@@ -124,7 +143,7 @@ export default function AboutPage() {
               Traditional Vendor vs. Mayura
             </h2>
           </div>
-          <div className="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100">
+          <div className="about-comparison bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100">
             {/* Header */}
             <div className="grid grid-cols-3 bg-brand-black text-white text-sm font-bold">
               <div className="p-4 pl-6">Feature</div>
@@ -153,6 +172,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section className="bg-brand-black py-16 sm:py-24"><div className="container text-center"><span className="section-tag mb-5 inline-block">Let’s move forward</span><h2 className="mx-auto max-w-2xl text-3xl font-black leading-tight text-white sm:text-5xl">Better journeys start with<br /><span className="text-brand-yellow">the right partner.</span></h2><Link href="/contact" className="btn-primary mt-8">Talk to our team <span aria-hidden="true">↗</span></Link></div></section>
     </>
   )
 }

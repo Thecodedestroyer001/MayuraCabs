@@ -18,6 +18,12 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
+  useEffect(() => { setMenuOpen(false) }, [pathname])
+  useEffect(() => {
+    const closeOnEscape = (event: KeyboardEvent) => { if (event.key === 'Escape') setMenuOpen(false) }
+    window.addEventListener('keydown', closeOnEscape)
+    return () => window.removeEventListener('keydown', closeOnEscape)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,7 +49,7 @@ export default function Navbar() {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 w-full transition-all duration-500 z-[50000] ${
-          scrolled ? 'bg-[#1C1C1B]/95 backdrop-blur-xl border-b border-white/10 py-2 shadow-lg' : 'bg-transparent py-3 border-b border-transparent'
+          scrolled || menuOpen ? 'bg-[#1C1C1B]/95 backdrop-blur-xl border-b border-white/10 py-2 shadow-lg' : 'bg-brand-black/95 lg:bg-transparent py-3 border-b border-white/10 lg:border-transparent'
         }`}
         role="navigation"
         aria-label="Main navigation"
@@ -107,6 +113,7 @@ export default function Navbar() {
             id="mobile-menu-btn"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
             aria-label="Toggle menu"
             className="lg:hidden relative z-50 w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-lg"
           >
@@ -118,19 +125,22 @@ export default function Navbar() {
       </nav>
 
       <div
+        id="mobile-navigation"
+        inert={!menuOpen}
         ref={menuRef}
         className={`fixed inset-0 bg-brand-black transition-all duration-500 lg:hidden ${
           menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
         style={{ zIndex: 49000 }}
       >
-        <div className="flex flex-col items-center justify-center h-full gap-8 px-8 pt-20">
+        <div className="flex flex-col items-center justify-center min-h-full gap-5 px-6 pt-24 pb-8 overflow-y-auto max-h-dvh">
           {navLinks.map((link, i) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="text-white text-3xl font-bold transition-colors hover:text-brand-yellow"
+              aria-current={pathname === link.href ? 'page' : undefined}
+              className={`text-2xl font-bold transition-colors hover:text-brand-yellow ${pathname === link.href ? 'text-brand-yellow' : 'text-white'}`}
               style={{ transitionDelay: `${i * 60}ms` }}
             >
               {link.label}

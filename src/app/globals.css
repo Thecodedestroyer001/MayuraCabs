@@ -213,6 +213,38 @@ body {
 .section-sm { padding: 60px 0; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
+html { scroll-padding-top: 88px; }
+:focus-visible { outline: 3px solid #d5a300; outline-offset: 4px; }
+.public-site { min-width: 0; }
+.public-site h1, .public-site h2 { text-wrap: balance; }
+@media (max-width: 767px) {
+  .public-site .section { padding: 56px 0; }
+  .public-site .section-sm { padding: 40px 0; }
+  .public-site .container { padding-inline: 20px; }
+  .public-site h1 { font-size: clamp(2rem, 8.6vw, 3rem); line-height: 1.12; letter-spacing: -.035em; }
+  .public-site h2 { line-height: 1.18; letter-spacing: -.025em; }
+  .public-site input, .public-site textarea, .public-site select { font-size: 16px; max-width: 100%; }
+  .public-site .btn-primary, .public-site .btn-outline { min-height: 48px; justify-content: center; text-align: center; white-space: normal; }
+  .public-site .grid > * { min-width: 0; }
+  #services-garage { height: auto; padding-block: 56px; overflow: hidden; }
+  #services-garage > div { position: relative; height: auto; overflow: visible; }
+  #services-garage .garage-track { transform: none !important; display: grid; max-width: 100%; padding-inline: 20px; }
+  #services-garage .garage-track > div { width: 100%; scroll-margin-top: 88px; }
+  .public-site [aria-label="Hero section"] { min-height: auto; }
+  .public-site [aria-label="Hero section"] .hero-float { min-width: 0; max-width: 100%; transform: none; }
+  .site-footer > div:nth-child(2) { padding: 48px 20px 32px !important; }
+  .site-footer > div:nth-child(2) > div { gap: 32px !important; }
+  .site-footer > div:last-child > div { padding: 20px !important; gap: 16px !important; }
+  .site-footer a { overflow-wrap: anywhere; }
+  .about-comparison > div:first-child { display: none; }
+  .about-comparison > div:not(:first-child) { grid-template-columns: 1fr; padding: 20px; gap: 10px; }
+  .about-comparison > div:not(:first-child) > div { border: 0; padding: 0; text-align: left; }
+  .about-comparison > div:not(:first-child) > div:first-child { font-size: 17px; margin-bottom: 4px; }
+  .about-comparison > div:not(:first-child) > div:nth-child(2)::before { content: 'Traditional vendor'; display: block; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 4px; }
+  .about-comparison > div:not(:first-child) > div:nth-child(3) { background: #fff5d0; padding: 12px; border-radius: 10px; }
+  .about-comparison > div:not(:first-child) > div:nth-child(3)::before { content: 'Mayura'; display: block; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 4px; }
+}
+
 /* ========================
    TRUST BAR MARQUEE
    ======================== */
@@ -519,4 +551,8 @@ body {
   .marquee-track { animation: none; }
   .client-logo-track { animation: none; }
   .hero-float, .hero-float-delayed { animation: none; }
+}
+/* The visual admin uses a full-canvas inline editor; its legacy field rail stays out of view. */
+main.min-h-screen > header + div > aside {
+  display: none;
 }

@@ -96,3 +96,33 @@ with check (public.is_admin());
 
 create index if not exists enquiries_created_at_idx
 on public.enquiries (created_at desc);
+
+create table if not exists public.page_overrides (
+  path text not null,
+  element_key text not null,
+  value text not null default '',
+  styles jsonb not null default '{}'::jsonb,
+  updated_at timestamptz not null default now(),
+  primary key (path, element_key)
+);
+
+alter table public.page_overrides enable row level security;
+
+drop policy if exists "Anyone can read page overrides" on public.page_overrides;
+create policy "Anyone can read page overrides"
+on public.page_overrides for select
+to anon, authenticated
+using (true);
+
+drop policy if exists "Admins can create page overrides" on public.page_overrides;
+create policy "Admins can create page overrides"
+on public.page_overrides for insert
+to authenticated
+with check (public.is_admin());
+
+drop policy if exists "Admins can update page overrides" on public.page_overrides;
+create policy "Admins can update page overrides"
+on public.page_overrides for update
+to authenticated
+using (public.is_admin())
+with check (public.is_admin());
