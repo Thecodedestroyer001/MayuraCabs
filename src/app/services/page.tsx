@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import HorizontalGarage from '@/components/services/HorizontalGarage'
 import { Building2, Bus, Handshake, Zap, Smartphone, Plane } from 'lucide-react'
@@ -129,8 +130,18 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-brand-black pt-32 pb-20 noise-overlay">
-        <div className="container">
+      <section className="relative overflow-hidden bg-brand-black pt-32 pb-20 min-h-[520px] flex items-center">
+        <Image
+          src="/services-hero.png"
+          alt="Business professionals arriving by corporate car"
+          fill
+          preload
+          sizes="100vw"
+          className="object-cover object-[62%_center]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/15" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/25" />
+        <div className="container relative z-10">
           <div className="max-w-3xl">
             <span className="section-tag mb-6 block w-fit">Our Services</span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">

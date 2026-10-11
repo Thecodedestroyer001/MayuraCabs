@@ -1,6 +1,6 @@
 'use client'
-import { useEffect, useRef, useState } from 'react'
-import { motion } from 'framer-motion'
+import { useEffect, useRef } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useSiteContent } from '@/components/shared/SiteContentProvider'
 
@@ -14,23 +14,8 @@ export default function Hero() {
   const whatsapp = useSiteContent('global.whatsapp', '917619196161')
   const headlineRef = useRef<HTMLHeadingElement>(null)
   const subRef = useRef<HTMLParagraphElement>(null)
-  const carRef = useRef<HTMLDivElement>(null)
   const ctaRef = useRef<HTMLDivElement>(null)
   const statsRef = useRef<HTMLDivElement>(null)
-
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const fleetImages = [
-    '/sedan-yellow-top.png',
-    '/van-yellow-top.png',
-    '/bus-yellow-top.png'
-  ]
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % fleetImages.length)
-    }, 4000)
-    return () => clearInterval(interval)
-  }, [])
 
   useEffect(() => {
     const timeline = [
@@ -56,29 +41,22 @@ export default function Hero() {
 
   return (
     <section
-      className="relative min-h-screen bg-brand-black overflow-hidden noise-overlay grid-bg pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-16 lg:pb-24"
+      className="relative min-h-screen bg-brand-black overflow-hidden pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-16 lg:pb-24 flex items-center"
       aria-label="Hero section"
     >
-
-
-      {/* Animated background lines */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {[...Array(5)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute h-px bg-gradient-to-r from-transparent via-brand-yellow/10 to-transparent"
-            style={{
-              top: `${20 + i * 15}%`,
-              left: 0,
-              right: 0,
-              animationDelay: `${i * 0.5}s`,
-            }}
-          />
-        ))}
-      </div>
+      <Image
+        src="/home-hero.png"
+        alt="Modern corporate campus at sunset"
+        fill
+        preload
+        sizes="100vw"
+        className="object-cover object-center"
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/20" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/30" />
 
       <div className="container relative z-10">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+        <div className="max-w-3xl py-12 sm:py-16 lg:py-24">
           {/* Left: Text */}
           <div className="order-1">
             <h1
@@ -139,40 +117,10 @@ export default function Hero() {
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Right: Car mockup */}
-          <div
-            ref={carRef}
-            className="order-2 relative flex items-center justify-center"
-          >
-            <div className="relative w-full max-w-[520px] lg:max-w-none">
-
-              {/* Floating car slider */}
-              <div className="hero-float relative h-[210px] min-[400px]:h-[240px] sm:h-[350px] md:h-[520px] lg:h-[600px] w-full flex items-center justify-center overflow-visible lg:-translate-y-12 lg:scale-125 xl:scale-150">
-                <motion.img
-                  key={currentImageIndex}
-                  src={fleetImages[currentImageIndex]}
-                  alt="Mayura branded corporate vehicle"
-                  initial={{ opacity: 0, scale: 0.85, y: 30 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ duration: 1, type: "spring", bounce: 0.4 }}
-                  className="w-[112%] sm:w-full h-auto max-w-[900px] object-contain drop-shadow-2xl absolute"
-                />
-              </div>
-              {/* Floating badge - Free Pilot */}
-              <div
-                className="absolute bottom-0 left-0 sm:bottom-8 sm:left-8 md:bottom-12 md:left-12 lg:bottom-16 lg:left-16 bg-brand-yellow text-brand-black px-3 sm:px-4 py-2 rounded-xl shadow-2xl hero-float-delayed"
-              >
+            <div className="inline-flex mt-6 bg-brand-yellow text-brand-black px-4 py-2 rounded-xl shadow-2xl">
+              <div>
                 <div data-content-key="home.badge_title" className="text-xs font-bold uppercase tracking-wide">{badgeTitle}</div>
                 <div data-content-key="home.badge_subtitle" className="text-xs font-medium opacity-70">{badgeSubtitle}</div>
-              </div>
-              {/* Floating badge - AIS140 */}
-              <div
-                className="absolute top-0 right-0 sm:top-4 sm:right-4 md:top-8 md:right-8 bg-white/10 backdrop-blur-md text-white px-3 sm:px-4 py-2 rounded-xl border border-white/20 hero-float"
-                style={{ animationDelay: '1s' }}>
-                              <div className="text-xs font-bold">AIS-140 Compliant</div>
-                  <div className="text-xs opacity-60">Government certified</div>
               </div>
             </div>
           </div>

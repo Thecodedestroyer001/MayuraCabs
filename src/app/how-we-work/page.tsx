@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import DynamicRouteTimeline from '@/components/how-we-work/DynamicRouteTimeline'
 
@@ -84,8 +85,18 @@ export default function HowWeWorkPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-brand-black pt-32 pb-20 noise-overlay">
-        <div className="container max-w-3xl">
+      <section className="relative overflow-hidden bg-brand-black pt-32 pb-20 min-h-[520px] flex items-center">
+        <Image
+          src="/how-we-work-hero.png"
+          alt="Team collaborating in a modern meeting room"
+          fill
+          preload
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/65 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/25" />
+        <div className="container relative z-10 max-w-3xl">
           <span className="section-tag mb-6 block w-fit">Our Process</span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
             From Discovery Call to First Pickup.
