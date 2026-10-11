@@ -74,8 +74,8 @@ export default function Hero() {
 
       <div className="container relative z-10">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center py-12 sm:py-16 lg:py-24">
-          {/* Left: Text */}
-          <div className="order-1">
+          {/* Text appears on the right on desktop and first on mobile. */}
+          <div className="order-1 lg:order-2">
             <h1
               data-content-key="home.hero_title"
               ref={headlineRef}
@@ -136,7 +136,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div ref={carRef} className="relative flex items-center justify-center">
+          <div ref={carRef} className="relative order-2 lg:order-1 flex items-center justify-center">
             <div className="relative w-full max-w-[520px] lg:max-w-none">
               <div className="hero-float relative h-[240px] sm:h-[350px] md:h-[460px] lg:h-[520px] w-full flex items-center justify-center overflow-visible">
                 <motion.img
