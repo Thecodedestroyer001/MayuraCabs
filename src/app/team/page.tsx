@@ -16,7 +16,7 @@ const team = [
     experience: '12 years in corporate operations and enterprise mobility across India\'s largest IT and BFSI organisations.',
     focus: 'Business strategy, enterprise client relationships, and fleet expansion',
     linkedin: '#',
-    email: 'arjun@mayuracabs.com',
+    email: 'support@mayuracars.in',
   },
   {
     name: 'Priya Krishnamurthy',
@@ -27,7 +27,7 @@ const team = [
     experience: '10 years in HR operations, workforce planning, and corporate services at leading GCCs in Bengaluru.',
     focus: 'Operations excellence, SLA management, and customer experience',
     linkedin: '#',
-    email: 'priya@mayuracabs.com',
+    email: 'support@mayuracars.in',
   },
   {
     name: 'Karthik Subramaniam',
@@ -38,7 +38,7 @@ const team = [
     experience: '8 years building mobility and logistics platforms at product companies. Former tech lead at a top ride-sharing startup.',
     focus: 'Commute platform development, route optimisation algorithms, and data engineering',
     linkedin: '#',
-    email: 'tech@mayuracabs.com',
+    email: 'support@mayuracars.in',
   },
   {
     name: 'Rajesh Nair',
@@ -49,7 +49,7 @@ const team = [
     experience: '15 years in transport safety, regulatory compliance, and driver training programmes across South India.',
     focus: 'AIS-140 compliance, driver background verification, and safety protocol enforcement',
     linkedin: '#',
-    email: 'safety@mayuracabs.com',
+    email: 'support@mayuracars.in',
   },
 ]
 
@@ -92,7 +92,7 @@ export default function TeamPage() {
             most reliable corporate mobility company.
           </p>
           <a
-            href="mailto:careers@mayuracabs.com"
+            href="mailto:support@mayuracars.in"
             id="careers-btn"
             className="bg-brand-black text-white font-bold px-8 py-4 rounded-lg inline-flex items-center gap-2 hover:opacity-90 transition-opacity"
           >
@@ -100,7 +100,7 @@ export default function TeamPage() {
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
               <polyline points="22,6 12,13 2,6"/>
             </svg>
-            careers@mayuracabs.com
+            support@mayuracars.in
           </a>
         </div>
       </section>

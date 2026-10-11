@@ -12,9 +12,9 @@ const contactOptions = [
       </svg>
     ),
     title: 'WhatsApp Us',
-    value: '+91-XXXXXXXXXX',
+    value: '+91 7619196161',
     sub: 'Message us on WhatsApp',
-    href: 'https://wa.me/91XXXXXXXXXX',
+    href: 'https://wa.me/917619196161',
     id: 'contact-wa',
   },
   {
@@ -24,9 +24,9 @@ const contactOptions = [
       </svg>
     ),
     title: 'Call Us',
-    value: '+91-XXXXXXXXXX',
+    value: '+91 7619196161',
     sub: 'Mon–Sat, 9AM–7PM IST',
-    href: 'tel:+91XXXXXXXXXX',
+    href: 'tel:+917619196161',
     id: 'contact-call',
   },
   {
@@ -52,9 +52,9 @@ const contactOptions = [
       </svg>
     ),
     title: 'Email Us',
-    value: 'contact@mayuracabs.com',
+    value: 'support@mayuracars.in',
     sub: 'Detailed enquiries and proposals',
-    href: 'mailto:contact@mayuracabs.com',
+    href: 'mailto:support@mayuracars.in',
     id: 'contact-email',
   },
 ]
@@ -79,9 +79,9 @@ const employeeOptions = [
 export default function ContactPage() {
   const heroTitle = useSiteContent('contact.hero_title', "Let's Talk About Your Transport Requirements")
   const heroDescription = useSiteContent('contact.hero_description', 'Fill in the form below and our team will contact you with a customised proposal for your enterprise.')
-  const email = useSiteContent('global.email', 'contact@mayuracabs.com')
-  const phone = useSiteContent('global.phone', '+91-9686180808')
-  const whatsapp = useSiteContent('global.whatsapp', '919686180808')
+  const email = useSiteContent('global.email', 'support@mayuracars.in')
+  const phone = useSiteContent('global.phone', '+91 7619196161')
+  const whatsapp = useSiteContent('global.whatsapp', '917619196161')
 
   return (
     <>

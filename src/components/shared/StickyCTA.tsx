@@ -2,7 +2,7 @@ export default function StickyCTA() {
   return (
     <div className="sticky-cta" role="complementary" aria-label="Quick contact">
       <a
-        href="https://wa.me/91XXXXXXXXXX?text=Hi%20Mayura%2C%20I'm%20interested%20in%20corporate%20transport"
+        href="https://wa.me/917619196161?text=Hi%20Mayura%2C%20I'm%20interested%20in%20corporate%20transport"
         target="_blank"
         rel="noopener noreferrer"
         id="sticky-whatsapp-btn"
@@ -14,7 +14,7 @@ export default function StickyCTA() {
         WhatsApp
       </a>
       <a
-        href="tel:+91XXXXXXXXXX"
+        href="tel:+917619196161"
         id="sticky-call-btn"
         className="flex-1 flex items-center justify-center gap-2 bg-brand-black text-white font-bold py-4 text-sm border-l border-white/10 transition-opacity hover:opacity-90"
       >

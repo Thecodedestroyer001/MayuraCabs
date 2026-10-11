@@ -18,7 +18,7 @@ export default function FooterCTA() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="https://wa.me/91XXXXXXXXXX"
+              href="https://wa.me/917619196161"
               target="_blank"
               rel="noopener noreferrer"
               id="footer-cta-whatsapp"
@@ -27,7 +27,7 @@ export default function FooterCTA() {
               WhatsApp
             </a>
             <a
-              href="tel:+91XXXXXXXXXX"
+              href="tel:+917619196161"
               id="footer-cta-call"
               className="btn-outline text-base px-8 py-4"
             >

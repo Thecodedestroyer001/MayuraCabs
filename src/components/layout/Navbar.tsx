@@ -62,7 +62,7 @@ export default function Navbar() {
               alt="Mayura Car Rentals"
               width={266}
               height={80}
-              className="h-7 sm:h-8 md:h-9 w-auto object-contain origin-left"
+              className="h-9 sm:h-10 md:h-11 w-auto object-contain origin-left"
               style={{ width: 'auto' }}
               priority
             />
@@ -92,7 +92,7 @@ export default function Navbar() {
             <span className="w-px h-4 bg-white/20" />
 
             <a
-              href="https://wa.me/91XXXXXXXXXX?text=Hi%20Mayura%2C%20I'm%20interested%20in%20corporate%20transport"
+              href="https://wa.me/917619196161?text=Hi%20Mayura%2C%20I'm%20interested%20in%20corporate%20transport"
               target="_blank"
               rel="noopener noreferrer"
               id="nav-whatsapp-btn"
@@ -148,7 +148,7 @@ export default function Navbar() {
           ))}
           <div className="flex flex-col gap-3 w-full max-w-xs mt-4">
             <a
-              href="https://wa.me/91XXXXXXXXXX"
+              href="https://wa.me/917619196161"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary justify-center text-sm py-2.5"

@@ -139,7 +139,7 @@ export default function FAQPage() {
           </p>
           <div className="reveal flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://wa.me/91XXXXXXXXXX"
+              href="https://wa.me/917619196161"
               target="_blank"
               rel="noopener noreferrer"
               id="faq-wa-btn"
@@ -147,7 +147,7 @@ export default function FAQPage() {
             >
               WhatsApp Us
             </a>
-            <a href="mailto:contact@mayuracabs.com" id="faq-email-btn" className="btn-outline px-8 py-4">
+            <a href="mailto:support@mayuracars.in" id="faq-email-btn" className="btn-outline px-8 py-4">
               Email Us
             </a>
           </div>

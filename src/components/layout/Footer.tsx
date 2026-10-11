@@ -7,8 +7,8 @@ import { useSiteContent } from '@/components/shared/SiteContentProvider'
 export default function Footer() {
   const year = new Date().getFullYear()
   const description = useSiteContent('global.footer_description', "Bengaluru's integrated corporate mobility company — AI-powered routing, 24/7 command centre, multi-fleet solution.")
-  const email = useSiteContent('global.email', 'contact@mayuracabs.com')
-  const phone = useSiteContent('global.phone', '+91-9686180808')
+  const email = useSiteContent('global.email', 'support@mayuracars.in')
+  const phone = useSiteContent('global.phone', '+91 7619196161')
 
   return (
     <footer className="site-footer" style={{ backgroundColor: '#111111', color: '#ffffff', marginTop: 0, padding: 0 }}>
@@ -22,11 +22,11 @@ export default function Footer() {
           {/* Brand */}
           <div style={{ flex: '1 1 260px', minWidth: '220px', maxWidth: '300px' }}>
             <Image
-              src="/logo-white.png"
+              src="/logo-custom.png"
               alt="Mayura Car Rentals"
-              width={140}
-              height={42}
-              style={{ height: '38px', width: 'auto', marginBottom: '24px', display: 'block' }}
+              width={266}
+              height={194}
+              style={{ height: '52px', width: 'auto', marginBottom: '24px', display: 'block' }}
             />
             <p data-content-key="global.footer_description" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '14px', lineHeight: '1.8', marginBottom: '28px' }}>
               {description}
@@ -60,7 +60,7 @@ export default function Footer() {
                 ['Our Team', '/team'],
                 ['How We Work', '/how-we-work'],
                 ['Blog', '/blog'],
-                ['Careers', 'mailto:careers@mayuracabs.com'],
+                ['Careers', 'mailto:support@mayuracars.in'],
               ].map(([label, href]) => (
                 <Link
                   key={href}

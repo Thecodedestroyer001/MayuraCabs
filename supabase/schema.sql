@@ -48,9 +48,9 @@ create table if not exists public.site_content (
 alter table public.site_content enable row level security;
 
 insert into public.site_content (key, page, label, value, input_type) values
-  ('global.email', 'Global settings', 'Contact email', 'contact@mayuracabs.com', 'email'),
-  ('global.phone', 'Global settings', 'Phone number', '+91-9686180808', 'tel'),
-  ('global.whatsapp', 'Global settings', 'WhatsApp number (country code included)', '919686180808', 'tel'),
+  ('global.email', 'Global settings', 'Contact email', 'support@mayuracars.in', 'email'),
+  ('global.phone', 'Global settings', 'Phone number', '+91 7619196161', 'tel'),
+  ('global.whatsapp', 'Global settings', 'WhatsApp number (country code included)', '917619196161', 'tel'),
   ('global.footer_description', 'Global settings', 'Footer description', 'Bengaluru''s integrated corporate mobility company — AI-powered routing, 24/7 command centre, multi-fleet solution.', 'textarea'),
   ('home.hero_title', 'Home page', 'Hero heading', 'Corporate Employee Transport.', 'text'),
   ('home.hero_description', 'Home page', 'Hero description', 'AI-powered, reliable corporate mobility for Bengaluru''s top enterprises. Zero operational headaches — guaranteed.', 'textarea'),
@@ -61,6 +61,15 @@ insert into public.site_content (key, page, label, value, input_type) values
   ('contact.hero_title', 'Contact page', 'Contact heading', 'Let''s Talk About Your Transport Requirements', 'text'),
   ('contact.hero_description', 'Contact page', 'Contact description', 'Fill in the form below and our team will contact you with a customised proposal for your enterprise.', 'textarea')
 on conflict (key) do nothing;
+
+update public.site_content
+set value = case key
+  when 'global.email' then 'support@mayuracars.in'
+  when 'global.phone' then '+91 7619196161'
+  when 'global.whatsapp' then '917619196161'
+end,
+updated_at = now()
+where key in ('global.email', 'global.phone', 'global.whatsapp');
 
 drop policy if exists "Anyone can read site content" on public.site_content;
 create policy "Anyone can read site content"

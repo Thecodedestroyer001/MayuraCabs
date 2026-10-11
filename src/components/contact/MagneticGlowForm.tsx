@@ -81,7 +81,7 @@ export default function MagneticGlowForm({
 
     setSubmitted(true)
     setSubmitting(false)
-    window.open(`https://wa.me/919686180808?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer')
+    window.open(`https://wa.me/917619196161?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer')
   }
 
   const toggleService = (s: string) => {

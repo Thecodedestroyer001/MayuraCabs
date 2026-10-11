@@ -12,7 +12,7 @@ export default function Hero() {
   const secondaryCta = useSiteContent('home.secondary_cta', 'WhatsApp Us')
   const badgeTitle = useSiteContent('home.badge_title', 'Enterprise Assessment')
   const badgeSubtitle = useSiteContent('home.badge_subtitle', 'No commitment required')
-  const whatsapp = useSiteContent('global.whatsapp', '919686180808')
+  const whatsapp = useSiteContent('global.whatsapp', '917619196161')
   const headlineRef = useRef<HTMLHeadingElement>(null)
   const subRef = useRef<HTMLParagraphElement>(null)
   const carRef = useRef<HTMLDivElement>(null)

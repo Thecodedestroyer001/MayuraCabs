@@ -28,7 +28,7 @@ export default function ScrollCarAnimation() {
   const f3Y = useTransform(scrollYProgress, [0.68, 0.76], [20, 0])
 
   return (
-    <section ref={containerRef} className="relative h-[300vh] bg-brand-black isolate" aria-label="Animated features">
+    <section ref={containerRef} className="relative h-[300vh] bg-white isolate" aria-label="Animated features">
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
         
         {/* Background Subtle Elements */}
@@ -43,7 +43,7 @@ export default function ScrollCarAnimation() {
             className="absolute top-20 md:top-32 lg:top-40 max-w-2xl text-center px-4"
           >
             <h3 className="text-4xl md:text-6xl font-extrabold text-brand-yellow mb-6">AI-Powered Routing</h3>
-            <p className="text-xl md:text-2xl text-white/70">Dynamic dispatch guarantees zero wait times and optimal efficiency for every shift.</p>
+            <p className="text-xl md:text-2xl text-brand-black/70">Dynamic dispatch guarantees zero wait times and optimal efficiency for every shift.</p>
           </motion.div>
 
           <motion.div 
@@ -51,7 +51,7 @@ export default function ScrollCarAnimation() {
             className="absolute top-20 md:top-32 lg:top-40 max-w-2xl text-center px-4"
           >
             <h3 className="text-4xl md:text-6xl font-extrabold text-brand-yellow mb-6">24/7 Command Centre</h3>
-            <p className="text-xl md:text-2xl text-white/70">Real-time GPS tracking and dedicated support teams ensure complete safety and visibility.</p>
+            <p className="text-xl md:text-2xl text-brand-black/70">Real-time GPS tracking and dedicated support teams ensure complete safety and visibility.</p>
           </motion.div>
 
           <motion.div 
@@ -59,7 +59,7 @@ export default function ScrollCarAnimation() {
             className="absolute top-20 md:top-32 lg:top-40 max-w-2xl text-center px-4"
           >
             <h3 className="text-4xl md:text-6xl font-extrabold text-brand-yellow mb-6">EV-Ready Fleet</h3>
-            <p className="text-xl md:text-2xl text-white/70">Slash your corporate carbon footprint with our premium fleet of electric vehicles.</p>
+            <p className="text-xl md:text-2xl text-brand-black/70">Slash your corporate carbon footprint with our premium fleet of electric vehicles.</p>
           </motion.div>
 
         </div>
@@ -72,7 +72,7 @@ export default function ScrollCarAnimation() {
           <div className="relative w-full">
             {/* Speed lines effect behind car to make it look like it's driving */}
             <div className="absolute top-1/2 -left-20 md:-left-40 w-40 md:w-64 h-1 bg-gradient-to-r from-transparent to-brand-yellow/60 blur-[2px] transform -translate-y-1/2" />
-            <div className="absolute top-2/3 -left-32 md:-left-64 w-32 md:w-48 h-0.5 bg-gradient-to-r from-transparent to-white/40 blur-[1px]" />
+            <div className="absolute top-2/3 -left-32 md:-left-64 w-32 md:w-48 h-0.5 bg-gradient-to-r from-transparent to-brand-black/30 blur-[1px]" />
             
             <Image
               src="/car-mockup-transparent.png"
@@ -87,7 +87,7 @@ export default function ScrollCarAnimation() {
         </motion.div>
         
         {/* Ground Line */}
-        <div className="absolute top-[65%] md:top-[70%] w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+        <div className="absolute top-[65%] md:top-[70%] w-full h-px bg-gradient-to-r from-transparent via-brand-black/15 to-transparent" />
       </div>
     </section>
   )

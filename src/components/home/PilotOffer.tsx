@@ -60,7 +60,7 @@ export default function PilotOffer() {
 
           <div className="reveal flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="https://wa.me/91XXXXXXXXXX?text=Hi%20Mayura%2C%20I%20want%20to%20claim%20the%20free%207-day%20pilot%20for%20my%20company"
+              href="https://wa.me/917619196161?text=Hi%20Mayura%2C%20I%20want%20to%20claim%20the%20free%207-day%20pilot%20for%20my%20company"
               target="_blank"
               rel="noopener noreferrer"
               id="pilot-whatsapp-btn"
