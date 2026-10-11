@@ -1,7 +1,6 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import Image from 'next/image'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useSiteContent } from '@/components/shared/SiteContentProvider'
 
@@ -57,7 +56,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative min-h-screen bg-brand-black overflow-hidden noise-overlay grid-bg pt-24 lg:pt-28 pb-16 lg:pb-24"
+      className="relative min-h-screen bg-brand-black overflow-hidden noise-overlay grid-bg pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-16 lg:pb-24"
       aria-label="Hero section"
     >
 
@@ -79,13 +78,13 @@ export default function Hero() {
       </div>
 
       <div className="container relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           {/* Left: Text */}
-          <div className="order-2 lg:order-1">
+          <div className="order-1">
             <h1
               data-content-key="home.hero_title"
               ref={headlineRef}
-              className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-black leading-[1.05] text-white mb-6"
+              className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-black leading-[1.05] text-white mb-4 sm:mb-6"
               style={{ textWrap: 'balance' }}
             >
               <span className="text-gradient-yellow">{heroTitle}</span>
@@ -94,13 +93,13 @@ export default function Hero() {
             <p
               data-content-key="home.hero_description"
               ref={subRef}
-              className="text-white/70 text-lg leading-relaxed mb-8 max-w-md"
+              className="text-white/70 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8 max-w-md"
             >
               {heroDescription}
             </p>
 
             {/* CTAs */}
-            <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 mb-12">
+            <div ref={ctaRef} className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12">
               <Link
                 data-content-key="home.primary_cta"
                 href="/contact"
@@ -127,7 +126,7 @@ export default function Hero() {
             {/* Stats row */}
             <div
               ref={statsRef}
-              className="grid grid-cols-3 gap-6 mt-12 pt-10 border-t border-white/10"
+              className="grid grid-cols-3 gap-3 sm:gap-6 mt-8 sm:mt-12 pt-6 sm:pt-10 border-t border-white/10"
             >
               {[
                 { num: '6+', label: 'Fleet Types' },
@@ -135,7 +134,7 @@ export default function Hero() {
                 { num: '100%', label: 'GPS Tracked' },
               ].map((stat) => (
                 <div key={stat.label}>
-                  <div className="text-2xl sm:text-3xl font-black text-brand-yellow">{stat.num}</div>
+                  <div className="text-xl sm:text-3xl font-black text-brand-yellow">{stat.num}</div>
                   <div className="text-white/50 text-xs mt-1 font-medium">{stat.label}</div>
                 </div>
               ))}
@@ -145,12 +144,12 @@ export default function Hero() {
           {/* Right: Car mockup */}
           <div
             ref={carRef}
-            className="order-1 lg:order-2 relative flex items-center justify-center"
+            className="order-2 relative flex items-center justify-center"
           >
-            <div className="relative">
+            <div className="relative w-full max-w-[520px] lg:max-w-none">
 
               {/* Floating car slider */}
-              <div className="hero-float translate-y-0 md:-translate-y-8 lg:-translate-y-12 scale-[1.3] sm:scale-[1.35] md:scale-125 lg:scale-125 xl:scale-150 relative h-[250px] sm:h-[350px] md:h-[600px] w-full min-w-[280px] sm:min-w-[320px] md:min-w-[500px] flex items-center justify-center overflow-visible">
+              <div className="hero-float relative h-[210px] min-[400px]:h-[240px] sm:h-[350px] md:h-[520px] lg:h-[600px] w-full flex items-center justify-center overflow-visible lg:-translate-y-12 lg:scale-125 xl:scale-150">
                 <motion.img
                   key={currentImageIndex}
                   src={fleetImages[currentImageIndex]}
@@ -158,19 +157,19 @@ export default function Hero() {
                   initial={{ opacity: 0, scale: 0.85, y: 30 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   transition={{ duration: 1, type: "spring", bounce: 0.4 }}
-                  className="w-full h-auto max-w-[900px] object-contain drop-shadow-2xl absolute"
+                  className="w-[112%] sm:w-full h-auto max-w-[900px] object-contain drop-shadow-2xl absolute"
                 />
               </div>
               {/* Floating badge - Free Pilot */}
               <div
-                className="absolute -bottom-4 left-4 sm:bottom-8 sm:left-8 md:bottom-16 md:left-16 bg-brand-yellow text-brand-black px-4 py-2 rounded-xl shadow-2xl hero-float-delayed"
+                className="absolute bottom-0 left-0 sm:bottom-8 sm:left-8 md:bottom-12 md:left-12 lg:bottom-16 lg:left-16 bg-brand-yellow text-brand-black px-3 sm:px-4 py-2 rounded-xl shadow-2xl hero-float-delayed"
               >
                 <div data-content-key="home.badge_title" className="text-xs font-bold uppercase tracking-wide">{badgeTitle}</div>
                 <div data-content-key="home.badge_subtitle" className="text-xs font-medium opacity-70">{badgeSubtitle}</div>
               </div>
               {/* Floating badge - AIS140 */}
               <div
-                className="absolute -top-4 right-4 sm:top-4 sm:right-4 md:top-8 md:right-8 bg-white/10 backdrop-blur-md text-white px-4 py-2 rounded-xl border border-white/20 hero-float"
+                className="absolute top-0 right-0 sm:top-4 sm:right-4 md:top-8 md:right-8 bg-white/10 backdrop-blur-md text-white px-3 sm:px-4 py-2 rounded-xl border border-white/20 hero-float"
                 style={{ animationDelay: '1s' }}>
                               <div className="text-xs font-bold">AIS-140 Compliant</div>
                   <div className="text-xs opacity-60">Government certified</div>
@@ -181,7 +180,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+      <div className="hidden lg:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 opacity-40">
         <span className="text-white text-xs tracking-widest uppercase">Scroll</span>
         <div className="w-px h-8 bg-gradient-to-b from-white to-transparent animate-pulse" />
       </div>
