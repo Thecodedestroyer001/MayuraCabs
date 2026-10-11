@@ -1,5 +1,6 @@
 'use client'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useSiteContent } from '@/components/shared/SiteContentProvider'
@@ -14,8 +15,24 @@ export default function Hero() {
   const whatsapp = useSiteContent('global.whatsapp', '917619196161')
   const headlineRef = useRef<HTMLHeadingElement>(null)
   const subRef = useRef<HTMLParagraphElement>(null)
+  const carRef = useRef<HTMLDivElement>(null)
   const ctaRef = useRef<HTMLDivElement>(null)
   const statsRef = useRef<HTMLDivElement>(null)
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const fleetImages = [
+    '/sedan-yellow-top.png',
+    '/van-yellow-top.png',
+    '/bus-yellow-top.png',
+  ]
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((previousIndex) => (previousIndex + 1) % fleetImages.length)
+    }, 4000)
+
+    return () => clearInterval(interval)
+  }, [fleetImages.length])
 
   useEffect(() => {
     const timeline = [
@@ -56,7 +73,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/30" />
 
       <div className="container relative z-10">
-        <div className="max-w-3xl py-12 sm:py-16 lg:py-24">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center py-12 sm:py-16 lg:py-24">
           {/* Left: Text */}
           <div className="order-1">
             <h1
@@ -117,10 +134,30 @@ export default function Hero() {
                 </div>
               ))}
             </div>
-            <div className="inline-flex mt-6 bg-brand-yellow text-brand-black px-4 py-2 rounded-xl shadow-2xl">
-              <div>
+          </div>
+
+          <div ref={carRef} className="relative flex items-center justify-center">
+            <div className="relative w-full max-w-[520px] lg:max-w-none">
+              <div className="hero-float relative h-[240px] sm:h-[350px] md:h-[460px] lg:h-[520px] w-full flex items-center justify-center overflow-visible">
+                <motion.img
+                  key={currentImageIndex}
+                  src={fleetImages[currentImageIndex]}
+                  alt="Mayura branded corporate vehicle"
+                  initial={{ opacity: 0, scale: 0.85, y: 30 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ duration: 1, type: 'spring', bounce: 0.4 }}
+                  className="absolute w-[112%] sm:w-full h-auto max-w-[900px] object-contain drop-shadow-2xl"
+                />
+              </div>
+
+              <div className="absolute bottom-0 left-0 sm:bottom-8 sm:left-8 bg-brand-yellow text-brand-black px-3 sm:px-4 py-2 rounded-xl shadow-2xl hero-float-delayed">
                 <div data-content-key="home.badge_title" className="text-xs font-bold uppercase tracking-wide">{badgeTitle}</div>
                 <div data-content-key="home.badge_subtitle" className="text-xs font-medium opacity-70">{badgeSubtitle}</div>
+              </div>
+
+              <div className="absolute top-0 right-0 sm:top-4 sm:right-4 bg-black/45 backdrop-blur-md text-white px-3 sm:px-4 py-2 rounded-xl border border-white/20 hero-float">
+                <div className="text-xs font-bold">AIS-140 Compliant</div>
+                <div className="text-xs opacity-60">Government certified</div>
               </div>
             </div>
           </div>
