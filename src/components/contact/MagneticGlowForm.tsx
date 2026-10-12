@@ -173,7 +173,7 @@ export default function MagneticGlowForm({
                   value={form.phone}
                   onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
                   className="w-full bg-brand-gray-100/50 border border-transparent rounded-xl px-4 py-3 text-sm focus:bg-white focus:outline-none focus:border-brand-yellow focus:ring-4 focus:ring-brand-yellow/10 transition-all"
-                  placeholder="+91 98765 43210"
+                  placeholder="+91 7619196161"
                 />
               </div>
             </div>
