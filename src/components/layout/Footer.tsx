@@ -1,8 +1,8 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { useSiteContent } from '@/components/shared/SiteContentProvider'
+import BrandLogo from '@/components/shared/BrandLogo'
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -21,13 +21,7 @@ export default function Footer() {
 
           {/* Brand */}
           <div style={{ flex: '1 1 260px', minWidth: '220px', maxWidth: '300px' }}>
-            <Image
-              src="/logo-custom.png"
-              alt="Mayura Car Rentals"
-              width={266}
-              height={194}
-              style={{ height: '52px', width: 'auto', marginBottom: '24px', display: 'block' }}
-            />
+            <BrandLogo className="mb-6" />
             <p data-content-key="global.footer_description" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '14px', lineHeight: '1.8', marginBottom: '28px' }}>
               {description}
             </p>

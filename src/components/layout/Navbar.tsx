@@ -1,8 +1,8 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
 import { usePathname } from 'next/navigation'
-import Image from 'next/image'
 import Link from 'next/link'
+import BrandLogo from '@/components/shared/BrandLogo'
 
 const navLinks = [
   { label: 'Home', href: '/' },
@@ -57,15 +57,7 @@ export default function Navbar() {
         <div className="w-full px-6 lg:px-10 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="relative z-10 flex-shrink-0 flex items-center" aria-label="Mayura Car Rentals - Home">
-            <Image
-              src="/logo-custom.png"
-              alt="Mayura Car Rentals"
-              width={266}
-              height={80}
-              className="h-9 sm:h-10 md:h-11 w-auto object-contain origin-left"
-              style={{ width: 'auto' }}
-              priority
-            />
+            <BrandLogo />
           </Link>
 
           {/* Desktop Nav + CTAs — all on the right */}

@@ -6,8 +6,9 @@ import Link from 'next/link'
 import { useSiteContent } from '@/components/shared/SiteContentProvider'
 
 export default function Hero() {
-  const heroTitle = useSiteContent('home.hero_title', 'Corporate Employee Transport.')
-  const heroDescription = useSiteContent('home.hero_description', "AI-powered, reliable corporate mobility for Bengaluru's top enterprises. Zero operational headaches — guaranteed.")
+  const heroTitle = useSiteContent('home.hero_title_primary', 'Enterprise Mobility.')
+  const heroTitleAccent = useSiteContent('home.hero_title_accent', 'Redefined for Bengaluru.')
+  const heroDescription = useSiteContent('home.hero_description_v2', "Mayura Car Rentals provides end-to-end transport management, premium fleet solutions, and route optimization for Bengaluru’s top enterprises.")
   const primaryCta = useSiteContent('home.primary_cta', 'Book a Discovery Call')
   const secondaryCta = useSiteContent('home.secondary_cta', 'WhatsApp Us')
   const badgeTitle = useSiteContent('home.badge_title', 'Enterprise Assessment')
@@ -73,16 +74,16 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/30" />
 
       <div className="container relative z-10">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center py-12 sm:py-16 lg:py-24">
+        <div className="relative -top-6 sm:-top-8 lg:-top-12 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center py-12 sm:py-16 lg:py-24">
           {/* Text */}
           <div className="order-1">
             <h1
-              data-content-key="home.hero_title"
               ref={headlineRef}
               className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-black leading-[1.05] text-white mb-4 sm:mb-6"
               style={{ textWrap: 'balance' }}
             >
-              <span className="text-gradient-yellow">{heroTitle}</span>
+              <span data-content-key="home.hero_title_primary" className="block text-white">{heroTitle}</span>
+              <span data-content-key="home.hero_title_accent" className="block text-brand-yellow">{heroTitleAccent}</span>
             </h1>
 
             <p
@@ -137,7 +138,7 @@ export default function Hero() {
           </div>
 
           <div ref={carRef} className="relative order-2 flex items-center justify-center">
-            <div className="relative w-full max-w-[520px] lg:max-w-none">
+            <div className="relative -top-8 sm:-top-12 lg:-top-16 w-full max-w-[620px] lg:max-w-none">
               <div className="hero-float relative h-[240px] sm:h-[350px] md:h-[460px] lg:h-[520px] w-full flex items-center justify-center overflow-visible">
                 <motion.img
                   key={currentImageIndex}
@@ -146,7 +147,7 @@ export default function Hero() {
                   initial={{ opacity: 0, scale: 0.85, y: 30 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   transition={{ duration: 1, type: 'spring', bounce: 0.4 }}
-                  className="absolute w-[112%] sm:w-full h-auto max-w-[900px] object-contain drop-shadow-2xl"
+                  className="absolute w-[135%] sm:w-[125%] lg:w-[140%] h-auto max-w-[1100px] object-contain drop-shadow-2xl"
                 />
               </div>
 
