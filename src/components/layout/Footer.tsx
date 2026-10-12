@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { Phone } from 'lucide-react'
 import { useSiteContent } from '@/components/shared/SiteContentProvider'
 import BrandLogo from '@/components/shared/BrandLogo'
 
@@ -38,7 +39,8 @@ export default function Footer() {
                 href={`tel:${phone.replace(/\s/g, '')}`}
                 style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}
               >
-                <span style={{ color: '#FFCC35' }}>☎</span> {phone}
+                <Phone aria-hidden="true" size={14} strokeWidth={2} style={{ color: '#FFCC35', flexShrink: 0 }} />
+                {phone}
               </a>
             </div>
           </div>
