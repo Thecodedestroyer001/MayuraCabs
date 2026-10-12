@@ -79,7 +79,7 @@ const employeeOptions = [
 export default function ContactPage() {
   const heroTitle = useSiteContent('contact.hero_title', "Let's Talk About Your Transport Requirements")
   const heroDescription = useSiteContent('contact.hero_description', 'Fill in the form below and our team will contact you with a customised proposal for your enterprise.')
-  const email = useSiteContent('global.email', 'support@mayuracars.in')
+  const email = 'support@mayuracars.in'
   const phone = useSiteContent('global.phone', '+91 7619196161')
   const whatsapp = useSiteContent('global.whatsapp', '917619196161')
 

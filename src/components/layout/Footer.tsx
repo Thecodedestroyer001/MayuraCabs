@@ -8,7 +8,7 @@ import BrandLogo from '@/components/shared/BrandLogo'
 export default function Footer() {
   const year = new Date().getFullYear()
   const description = useSiteContent('global.footer_description', "Bengaluru's integrated corporate mobility company — AI-powered routing, 24/7 command centre, multi-fleet solution.")
-  const email = useSiteContent('global.email', 'support@mayuracars.in')
+  const email = 'support@mayuracars.in'
   const phone = useSiteContent('global.phone', '+91 7619196161')
 
   return (
